@@ -512,7 +512,18 @@ const onSubmit = async (val) => {
 
     const dailyAllowance = Math.trunc((100 * mer) / 358.5);
     const monthlyAllowance = Math.trunc(dailyAllowance * 30.4167);
-    const deliveryFrequency = "1 month";
+    
+    const gramsPerDay = dailyAllowance;
+    let deliveryFrequency;
+
+    if (coveredPostalCodes.includes(postalCode.toString())) {
+      // Postal code is included in the list
+      deliveryFrequency = "1 month";
+    } else {
+      // Postal code is not included, calculate deliveryFrequency based on the formula
+      const daysInMonth = 30.4167; // Average days in a month
+      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 * daysInMonth));
+    }
 
     let currentFormData;
     let currentPlan;
