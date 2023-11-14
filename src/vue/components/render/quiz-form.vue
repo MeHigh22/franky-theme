@@ -521,8 +521,7 @@ const onSubmit = async (val) => {
       deliveryFrequency = "1 month";
     } else {
       // Postal code is not included, calculate deliveryFrequency based on the formula
-      const daysInMonth = 30.4167; // Average days in a month
-      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 * daysInMonth));
+      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + 'weeks';
     }
 
     let currentFormData;
