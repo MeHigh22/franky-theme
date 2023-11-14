@@ -515,13 +515,14 @@ const onSubmit = async (val) => {
     
     const gramsPerDay = dailyAllowance;
     let deliveryFrequency;
+    
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
       // Postal code is included in the list
       deliveryFrequency = "1 month";
     } else {
       // Postal code is not included, calculate deliveryFrequency based on the formula
-      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + 'weeks';
+      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + ' weeks';
     }
 
     let currentFormData;
