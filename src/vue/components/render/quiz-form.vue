@@ -428,6 +428,32 @@ const onSubmit = async (val) => {
   const data = val['multi-step_2'];
   const sizes = [1.5, 3, 4.5, 6];
 
+  
+
+  // const sizeToSellingPlan = {
+  //   '3Kg': {
+  //     sellingPlan: 688850010454,
+  //     id: 46534497796438,
+  //     quantity: 1,
+  //   },
+  //   '4.5Kg': {
+  //     sellingPlan: 688850020454, // Remplacer par ceux de Charles
+  //     id: 1,
+  //     quantity: 1,
+  //   },
+  //   '6Kg': {
+  //     sellingPlan: 688850030454,
+  //     id: 1,
+  //     quantity: 1,
+  //   },
+  //   '15Kg': {
+  //     sellingPlan: 688850040454,
+  //     id: 1,
+  //     quantity: 1,
+  //   },
+  // };
+
+
   const fullName = data.information['full_name'];
   const postalCode = data.information.postal_code;
   const email = data.information.email;
@@ -486,6 +512,7 @@ const onSubmit = async (val) => {
 
     const dailyAllowance = Math.trunc((100 * mer) / 358.5);
     const monthlyAllowance = Math.trunc(dailyAllowance * 30.4167);
+    const deliveryFrequency = "1 month";
 
     let currentFormData;
     let currentPlan;
@@ -589,9 +616,11 @@ const onSubmit = async (val) => {
         BODYSCORE: bodyScoreLabel,
         IMAGE: dogImage,
         IMLINK: dogImage,
+        FREQUENCY : deliveryFrequency,
       },
     };
 
+     console.log('MailChimp Data:', mailChimpData);
     // send data to mailchimp
     sendDataToMailChimp(mailChimpData);
 
@@ -626,6 +655,7 @@ const onSubmit = async (val) => {
       dogImage,
       breed,
       breedLabel,
+      deliveryFrequency,
       age,
       month,
       weight: bodyWeight,
