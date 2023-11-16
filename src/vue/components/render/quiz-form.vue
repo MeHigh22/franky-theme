@@ -423,23 +423,23 @@ const backToQuiz = async () => {
 
 const sizeToSellingPlan = {
   '3Kg': {
-    sellingPlan: 688850010454,
-    id: 46534497796438,
+    sellingPlan: 688994320726,
+    id: 47265461764438,
     quantity: 1,
   },
   '4.5Kg': {
-    sellingPlan: 688850020454, // Remplacer par ceux de Charles
-    id: 1,
+    sellingPlan: 688994353494, // Remplacer par ceux de Charles
+    id: 47265465598294,
     quantity: 1,
   },
   '6Kg': {
-    sellingPlan: 688850030454,
-    id: 1,
+    sellingPlan: 688994386262,
+    id: 47265466712406,
     quantity: 1,
   },
   '15Kg': {
-    sellingPlan: 688850040454,
-    id: 1,
+    sellingPlan: 688994484566,
+    id: 47265471136086,
     quantity: 1,
   },
 };
