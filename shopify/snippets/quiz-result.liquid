@@ -74,7 +74,11 @@
             width=""
             height=""
           >
-          <p class="sucess-detail-quiz-result" v-text="$t('message.result_frequency')"></p>
+          <p class="sucess-detail-quiz-result">
+            {% raw %}
+              {{ $t('message.result_frequency')}} {{dog.deliveryFrequency}}
+            {% endraw %}
+          </p>
         </div>
         <div class="info-row-quiz-result">
           <img

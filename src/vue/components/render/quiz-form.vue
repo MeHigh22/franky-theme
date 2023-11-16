@@ -421,38 +421,37 @@ const backToQuiz = async () => {
   await clearCart();
 };
 
+const sizeToSellingPlan = {
+  '3Kg': {
+    sellingPlan: 688850010454,
+    id: 46534497796438,
+    quantity: 1,
+  },
+  '4.5Kg': {
+    sellingPlan: 688850020454, // Remplacer par ceux de Charles
+    id: 1,
+    quantity: 1,
+  },
+  '6Kg': {
+    sellingPlan: 688850030454,
+    id: 1,
+    quantity: 1,
+  },
+  '15Kg': {
+    sellingPlan: 688850040454,
+    id: 1,
+    quantity: 1,
+  },
+};
+
+let closestSize2;
+let calculatedSize;
 // submission starts here
 
 const onSubmit = async (val) => {
   postal_code_not_found.value = '';
   const data = val['multi-step_2'];
   const sizes = [1.5, 3, 4.5, 6];
-
-  
-
-  // const sizeToSellingPlan = {
-  //   '3Kg': {
-  //     sellingPlan: 688850010454,
-  //     id: 46534497796438,
-  //     quantity: 1,
-  //   },
-  //   '4.5Kg': {
-  //     sellingPlan: 688850020454, // Remplacer par ceux de Charles
-  //     id: 1,
-  //     quantity: 1,
-  //   },
-  //   '6Kg': {
-  //     sellingPlan: 688850030454,
-  //     id: 1,
-  //     quantity: 1,
-  //   },
-  //   '15Kg': {
-  //     sellingPlan: 688850040454,
-  //     id: 1,
-  //     quantity: 1,
-  //   },
-  // };
-
 
   const fullName = data.information['full_name'];
   const postalCode = data.information.postal_code;
@@ -560,6 +559,32 @@ const onSubmit = async (val) => {
       });
       postal_code_not_found.value = t('message.postal_code_not_found');
       console.log('nothing added to cart');
+      calculatedSize = (calculateSampleSize(dailyAllowance) / 1000).toFixed(1);
+      // Round it to the nearest available size
+      let closestDifference = Infinity;
+
+      for (const size in sizeToSellingPlan) {
+        const sizeValue = parseFloat(size.replace('_', '.').replace('Kg', ''));
+        const difference = Math.abs(sizeValue - calculatedSize);
+
+        if (difference < closestDifference) {
+          closestDifference = difference;
+          closestSize2 = sizeToSellingPlan[size];
+        }
+      }
+
+      // Round it to the nearest available size
+      if (parseFloat(closestSize2) < 3) {
+        closestSize2 = '3';
+      }
+      
+      if (parseFloat(closestSize2) > 6) {
+        closestSize2 = '15';
+      }
+
+      console.log('Calculated Size:', calculatedSize);
+      console.log('Rounded Size:', closestSize2);
+      
     }
 
     let sampleSizeLink;
