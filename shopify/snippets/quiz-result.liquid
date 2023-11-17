@@ -3,7 +3,7 @@
   rel="stylesheet"
 >
 
-<div class="quiz-result-container" v-if="!postal_code_not_found">
+<div class="quiz-result-container" >
   <button
     class="back-to-quiz"
     type="button"
@@ -50,11 +50,10 @@
             type="button"
             class="btn primary-btn success-action"
             @click="addToCart({ id:dog.samples.sampleId, quantity:1, selling_plan:'', name: dog.dogName })"
-            :disabled="alreadyCart.find(item => item.name == dog.dogName) || postal_code_not_found !== '' "
+            :disabled="alreadyCart.find(item => item.name == dog.dogName) || loading "
           >
             {% raw %}
-              <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
-              <span v-text="$t('message.result_adding_cart')" v-else-if="loading"></span>
+              <span v-text="$t('message.result_adding_cart')" v-if="loading"></span>
               <span v-text="$t('message.result_already_cart')" v-else-if="alreadyCart.find(item => item.product.variant_id == dog.samples.sampleId && item.name == dog.dogName)"></span>
               <span v-text="$t('message.result_sample_to_cart', { msg : dog.samples.closestSize  })" v-else></span>
             {% endraw %}
@@ -129,20 +128,13 @@
         <button
           type="button"
           class="btn primary-btn success-action subs-btn"
-          :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  postal_code_not_found !== '' "
+          :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  loading "
           @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})"
         >
           {% raw %}
-            <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
-            <span v-else-if="loading">
-              {{ $t('message.result_adding_cart') }}
-            </span>
-            <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">
-              {{ $t('message.result_already_cart') }}
-            </span>
-            <span v-else="!loading">
-              {{ $t('message.result_subs_to_cart') }}
-            </span>
+      <span v-if="loading">{{ $t('message.result_adding_cart') }}</span>
+          <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">{{ $t('message.result_already_cart') }}</span>
+          <span v-else>{{ $t('message.result_subs_to_cart') }}</span>
           {% endraw %}
         </button>
       </div>

@@ -559,32 +559,39 @@ const onSubmit = async (val) => {
       });
       postal_code_not_found.value = t('message.postal_code_not_found');
       console.log('nothing added to cart');
-      calculatedSize = (calculateSampleSize(dailyAllowance) / 1000).toFixed(1);
-      // Round it to the nearest available size
-      let closestDifference = Infinity;
 
       for (const size in sizeToSellingPlan) {
         const sizeValue = parseFloat(size.replace('_', '.').replace('Kg', ''));
-        const difference = Math.abs(sizeValue - calculatedSize);
 
-        if (difference < closestDifference) {
-          closestDifference = difference;
-          closestSize2 = sizeToSellingPlan[size];
+        let key = size;
+        currentFormData = sizeToSellingPlan[key];
+        
+        if (monthlyAllowance < 3000) {
+          // If monthly allowance is below 3000, choose the 3Kg plan
+          currentPlan = sizeToSellingPlan['3Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['3Kg'].id;
+          currentQuantity = sizeToSellingPlan['3Kg'].quantity;
+          cartProduct.value = '3Kg';
+        } else if (monthlyAllowance >= 6000) {
+          // If monthly allowance is above 6000, choose the 15Kg plan
+          currentPlan = sizeToSellingPlan['15Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['15Kg'].id;
+          currentQuantity = sizeToSellingPlan['15Kg'].quantity;
+          cartProduct.value = '15Kg';
+        } else if (monthlyAllowance >= 4500) {
+          // If monthly allowance is between 4500 and 6000, choose the 6Kg plan
+          currentPlan = sizeToSellingPlan['6Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['6Kg'].id;
+          currentQuantity = sizeToSellingPlan['6Kg'].quantity;
+          cartProduct.value = '6Kg';
+        } else if (monthlyAllowance >= 3000 && monthlyAllowance < 4500) {
+          // If monthly allowance is between 3000 and 4500, choose the 4.5Kg plan
+          currentPlan = sizeToSellingPlan['4.5Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['4.5Kg'].id;
+          currentQuantity = sizeToSellingPlan['4.5Kg'].quantity;
+          cartProduct.value = '4.5Kg';
         }
-      }
 
-      // Round it to the nearest available size
-      if (parseFloat(closestSize2) < 3) {
-        closestSize2 = '3';
-      }
-      
-      if (parseFloat(closestSize2) > 6) {
-        closestSize2 = '15';
-      }
-
-      console.log('Calculated Size:', calculatedSize);
-      console.log('Rounded Size:', closestSize2);
-      
     }
 
     let sampleSizeLink;
@@ -722,5 +729,5 @@ const onSubmit = async (val) => {
 
   console.log(results.value);
   slider.value?.update();
-};
+}};
 </script>
