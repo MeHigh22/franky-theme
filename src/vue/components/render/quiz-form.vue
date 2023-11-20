@@ -444,9 +444,6 @@ const sizeToSellingPlan = {
   },
 };
 
-let closestSize2;
-let calculatedSize;
-// submission starts here
 
 const onSubmit = async (val) => {
   postal_code_not_found.value = '';
@@ -518,10 +515,10 @@ const onSubmit = async (val) => {
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
       // Postal code is included in the list
-      deliveryFrequency = "1 month";
+      deliveryFrequency = t('message.frequency_covered');
     } else {
       // Postal code is not included, calculate deliveryFrequency based on the formula
-      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + ' weeks';
+      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + t('message.weeks');
     }
 
     let currentFormData;
@@ -553,12 +550,6 @@ const onSubmit = async (val) => {
         }
       }
     } else {
-      toast.warning(t('message.nothing_added_cart'), {
-        timeout: 3048,
-        hideProgressBar: false,
-      });
-      postal_code_not_found.value = t('message.postal_code_not_found');
-      console.log('nothing added to cart');
 
       for (const size in sizeToSellingPlan) {
         const sizeValue = parseFloat(size.replace('_', '.').replace('Kg', ''));
@@ -572,24 +563,24 @@ const onSubmit = async (val) => {
           currentVariantId = sizeToSellingPlan['3Kg'].id;
           currentQuantity = sizeToSellingPlan['3Kg'].quantity;
           cartProduct.value = '3Kg';
-        } else if (monthlyAllowance >= 6000) {
-          // If monthly allowance is above 6000, choose the 15Kg plan
-          currentPlan = sizeToSellingPlan['15Kg'].sellingPlan;
-          currentVariantId = sizeToSellingPlan['15Kg'].id;
-          currentQuantity = sizeToSellingPlan['15Kg'].quantity;
-          cartProduct.value = '15Kg';
-        } else if (monthlyAllowance >= 4500) {
-          // If monthly allowance is between 4500 and 6000, choose the 6Kg plan
-          currentPlan = sizeToSellingPlan['6Kg'].sellingPlan;
-          currentVariantId = sizeToSellingPlan['6Kg'].id;
-          currentQuantity = sizeToSellingPlan['6Kg'].quantity;
-          cartProduct.value = '6Kg';
         } else if (monthlyAllowance >= 3000 && monthlyAllowance < 4500) {
           // If monthly allowance is between 3000 and 4500, choose the 4.5Kg plan
           currentPlan = sizeToSellingPlan['4.5Kg'].sellingPlan;
           currentVariantId = sizeToSellingPlan['4.5Kg'].id;
           currentQuantity = sizeToSellingPlan['4.5Kg'].quantity;
           cartProduct.value = '4.5Kg';
+        } else if (monthlyAllowance >= 4500 && monthlyAllowance < 6000) {
+          // If monthly allowance is between 4500 and 6000, choose the 6Kg plan
+          currentPlan = sizeToSellingPlan['6Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['6Kg'].id;
+          currentQuantity = sizeToSellingPlan['6Kg'].quantity;
+          cartProduct.value = '6Kg';
+        } else if (monthlyAllowance >= 6000) {
+          // If monthly allowance is above 6000, choose the 15Kg plan
+          currentPlan = sizeToSellingPlan['15Kg'].sellingPlan;
+          currentVariantId = sizeToSellingPlan['15Kg'].id;
+          currentQuantity = sizeToSellingPlan['15Kg'].quantity;
+          cartProduct.value = '15Kg';
         }
 
     }
