@@ -19,6 +19,7 @@
   "result_adding_cart": "Toevoegen aan winkelwagen...",
   "result_already_cart": "Al in winkelwagen",
   "result_sample_to_cart": "Voeg {msg} kg monster toe aan winkelwagen",
+  "result_calculated_needs": "We hebben de dagelijkse behoeften van {dogName} berekend:",
   "back_to_quiz": "← Terug naar quiz",
   "quiz_detail_title": "Details voor {msg}",
   "result_personalized": "Persoonlijk abonnement",

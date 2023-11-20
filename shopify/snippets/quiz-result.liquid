@@ -22,7 +22,7 @@
     </div>
 
     <div class="dog_title">
-      <h1 v-text="`We Calculated ${dog.dogName} daily needs:`"></h1>
+      <h1 v-text="$t(`message.result_calculated_needs`, { dogName: dog.dogName })"></h1>
       <h1 v-text="`${ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance}g/day`"></h1>
       <h2 class="text-black" v-text="$t('message.result_offer')"></h2>
       <p class="options" v-text="$t('message.result_options')"></p>
