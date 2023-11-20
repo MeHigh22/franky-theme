@@ -20,6 +20,8 @@
   "result_already_cart": "Already In Cart",
   "result_sample_to_cart": "Add {msg} kg Sample to Cart",
   "result_calculated_needs": "We Calculated {dogName} daily needs:",
+  "result_message_cover" : "We do not fully cover your area just yet, Kibbles boxes are therefore larger and delivery frequency longer.",
+  "day": "day",
   "back_to_quiz": "&#8592; Back to quiz",
   "quiz_detail_title": "Details for {msg}",
   "result_personalized": "Personalized Subscription",

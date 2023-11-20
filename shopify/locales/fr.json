@@ -20,6 +20,8 @@
   "result_already_cart": "Déjà dans le panier",
   "result_sample_to_cart": "Ajouter {msg} kg d'échantillon au panier",
   "result_calculated_needs": "Nous avons calculé les besoins quotidiens de {dogName} :",
+  "result_message_cover": "Nous ne couvrons pas encore entièrement votre région, les boîtes de croquettes sont donc plus grandes et la fréquence de livraison plus longue.",
+  "day": "jour",
   "back_to_quiz": "← Retour au quiz",
   "quiz_detail_title": "Détails pour {msg}",
   "result_personalized": "Abonnement personnalisé",
