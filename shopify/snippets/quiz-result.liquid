@@ -64,7 +64,7 @@
 
       <div class="subs-col">
         <h2 v-text="$t('message.result_personalized')"></h2>
-        <p class="sucess-detail-quiz-result">
+        <p v-if="isPostalCodeCovered" class="sucess-detail-quiz-result">
             {% raw %}
               {{ $t('message.result_message_cover')}}
             {% endraw %}

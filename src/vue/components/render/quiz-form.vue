@@ -188,6 +188,7 @@ import { useToast } from 'vue-toastification';
 import { useI18n } from 'vue-i18n';
 import PasswordField from './password-field.vue';
 
+
 const MutationPlugin = (slider) => {
   const observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
@@ -233,6 +234,7 @@ const alreadyCart = ref([]);
 const cartProduct = ref('');
 const postal_code_not_found = ref('');
 const tempCustomerId = ref('');
+const isPostalCodeCovered = ref(true);
 
 const stepChange = (step) => {
   if (step.currentStep.isValid) {
@@ -450,6 +452,7 @@ const onSubmit = async (val) => {
   const data = val['multi-step_2'];
   const sizes = [1.5, 3, 4.5, 6];
 
+
   const fullName = data.information['full_name'];
   const postalCode = data.information.postal_code;
   const email = data.information.email;
@@ -511,14 +514,19 @@ const onSubmit = async (val) => {
     
     const gramsPerDay = dailyAllowance;
     let deliveryFrequency;
+
     
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
       // Postal code is included in the list
       deliveryFrequency = t('message.frequency_covered');
+      isPostalCodeCovered.value = true;
+      console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
     } else {
       // Postal code is not included, calculate deliveryFrequency based on the formula
       deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + t('message.weeks');
+      isPostalCodeCovered.value = false;
+      console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
     }
 
     let currentFormData;
@@ -528,6 +536,7 @@ const onSubmit = async (val) => {
     let maxQuantity = 12800;
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
+      
       for (let allowance = 3000; allowance <= 12800; allowance += 100) {
         let key = (allowance / 1000)?.toFixed(1).replace('.', '_') + 'Kg';
 
