@@ -582,7 +582,7 @@ const onSubmit = async (val) => {
           currentQuantity = sizeToSellingPlan['15Kg'].quantity;
           cartProduct.value = '15Kg';
         }
-
+      }
     }
 
     let sampleSizeLink;
@@ -716,7 +716,6 @@ const onSubmit = async (val) => {
       },
       needs: { dailyAllowance, monthlyAllowance, idealBodyWeight },
     });
-  }
 
   console.log(results.value);
   slider.value?.update();
