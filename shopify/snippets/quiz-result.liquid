@@ -64,11 +64,16 @@
 
       <div class="subs-col">
         <h2 v-text="$t('message.result_personalized')"></h2>
-        <p v-if="isPostalCodeCovered" class="sucess-detail-quiz-result">
-            {% raw %}
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+          {% raw %}
+            <p v-if="!postal_code_not_found">
+            </p>
+            <p v-else="postal_code_not_found" class="sucess-detail-quiz-result">
               {{ $t('message.result_message_cover')}}
-            {% endraw %}
           </p>
+          {% endraw %}
+        </div>
+
 
         <div class="info-row-quiz-result">
           <img
@@ -85,7 +90,7 @@
             {% endraw %}
           </p>
         </div>
-        <div class="info-row-quiz-result">
+        <div  class="info-row-quiz-result">
           <img
             src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/Group_461.png?v=1691420070"
             alt="Quantity Icon"
@@ -94,11 +99,16 @@
             width=""
             height=""
           >
-          <p class="sucess-detail-quiz-result">
+          <div>
             {% raw %}
-              {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/day).
-            {% endraw %}
-          </p>
+            <p v-if="!postal_code_not_found" class="sucess-detail-quiz-result">
+                {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/{{ $t('message.day') }}).
+            </p>
+            <p v-else="postal_code_not_found"class="sucess-detail-quiz-result">
+                {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 6000 ? '15' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/{{ $t('message.day') }}).
+                </p>
+              {% endraw %}
+          </div>
         </div>
         <div class="info-row-quiz-result">
           <img

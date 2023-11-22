@@ -14,6 +14,7 @@
             name="result"
             :postal_code_not_found="postal_code_not_found"
             :addToCart="addToCart"
+            :isPostalCodeCovered="isPostalCodeCovered"
             :dogs="dogs"
             :dog="dog"
             :loading="loading"
@@ -234,7 +235,7 @@ const alreadyCart = ref([]);
 const cartProduct = ref('');
 const postal_code_not_found = ref('');
 const tempCustomerId = ref('');
-const isPostalCodeCovered = ref(true);
+const isPostalCodeCovered = ref(false);
 
 const stepChange = (step) => {
   if (step.currentStep.isValid) {
@@ -560,6 +561,13 @@ const onSubmit = async (val) => {
       }
     } else {
 
+      toast.warning(('Postal Code not covered'), {
+        timeout: 3048,
+        hideProgressBar: false,
+      });
+      
+      postal_code_not_found.value = t('message.postal_code_not_found');
+
       for (const size in sizeToSellingPlan) {
         const sizeValue = parseFloat(size.replace('_', '.').replace('Kg', ''));
 
@@ -708,6 +716,7 @@ const onSubmit = async (val) => {
       activityLabel,
       desexed,
       desexedLabel,
+      isPostalCodeCovered,
       bodyScore: bodyConditionScore,
       bodyScoreLabel,
       cart: {
