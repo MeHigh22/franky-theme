@@ -4,6 +4,7 @@ import { createMultiStepPlugin } from '@formkit/addons';
 import { createProPlugin, repeater, autocomplete } from '@formkit/pro';
 import { plugin, defaultConfig } from '@formkit/vue';
 import { en, fr, nl } from '@formkit/i18n';
+import { createLocalStoragePlugin } from '@formkit/addons';
 
 import '@formkit/pro/genesis';
 import '@formkit/addons/css/multistep';
@@ -20,7 +21,15 @@ const config = defaultConfig({
   // Define the active locale
   locale: 'en',
   theme: 'genesis',
-  plugins: [createMultiStepPlugin(), pro],
+  plugins: [
+    createMultiStepPlugin(),
+    createLocalStoragePlugin({
+      // plugin defaults:
+      prefix: 'formkit',
+      maxAge: 365 * 24 * 60 * 60,
+    }),
+    pro,
+  ],
   icons: {
     ...genesisIcons,
   },

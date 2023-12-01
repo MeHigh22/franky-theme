@@ -70,12 +70,14 @@
       #default="{ value }"
       :action="false"
       :actions="false"
+      use-local-storage
     >
       <FormKit
         type="multi-step"
         :before-step-change="stepChange"
         tab-style="tab"
         :allow-incomplete="false"
+        use-local-storage
       >
         <div class="step_content">
           <div class="step_inner">
@@ -188,7 +190,6 @@ import 'keen-slider/keen-slider.min.css';
 import { useToast } from 'vue-toastification';
 import { useI18n } from 'vue-i18n';
 import PasswordField from './password-field.vue';
-
 
 const MutationPlugin = (slider) => {
   const observer = new MutationObserver(function (mutations) {
@@ -447,12 +448,10 @@ const sizeToSellingPlan = {
   },
 };
 
-
 const onSubmit = async (val) => {
   postal_code_not_found.value = '';
   const data = val['multi-step_2'];
   const sizes = [1.5, 3, 4.5, 6];
-
 
   const fullName = data.information['full_name'];
   const postalCode = data.information.postal_code;
@@ -512,11 +511,9 @@ const onSubmit = async (val) => {
 
     const dailyAllowance = Math.trunc((100 * mer) / 358.5);
     const monthlyAllowance = Math.trunc(dailyAllowance * 30.4167);
-    
+
     const gramsPerDay = dailyAllowance;
     let deliveryFrequency;
-
-    
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
       // Postal code is included in the list
@@ -525,7 +522,8 @@ const onSubmit = async (val) => {
       console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
     } else {
       // Postal code is not included, calculate deliveryFrequency based on the formula
-      deliveryFrequency = Math.ceil(monthlyAllowance / (gramsPerDay * 7 )) + t('message.weeks');
+      deliveryFrequency =
+        Math.ceil(monthlyAllowance / (gramsPerDay * 7)) + t('message.weeks');
       isPostalCodeCovered.value = false;
       console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
     }
@@ -537,7 +535,6 @@ const onSubmit = async (val) => {
     let maxQuantity = 12800;
 
     if (coveredPostalCodes.includes(postalCode.toString())) {
-      
       for (let allowance = 3000; allowance <= 12800; allowance += 100) {
         let key = (allowance / 1000)?.toFixed(1).replace('.', '_') + 'Kg';
 
@@ -560,12 +557,11 @@ const onSubmit = async (val) => {
         }
       }
     } else {
-
-      toast.warning(('Postal Code not covered'), {
+      toast.warning('Postal Code not covered', {
         timeout: 3048,
         hideProgressBar: false,
       });
-      
+
       postal_code_not_found.value = t('message.postal_code_not_found');
 
       for (const size in sizeToSellingPlan) {
@@ -573,7 +569,7 @@ const onSubmit = async (val) => {
 
         let key = size;
         currentFormData = sizeToSellingPlan[key];
-        
+
         if (monthlyAllowance < 3000) {
           // If monthly allowance is below 3000, choose the 3Kg plan
           currentPlan = sizeToSellingPlan['3Kg'].sellingPlan;
@@ -667,11 +663,11 @@ const onSubmit = async (val) => {
         BODYSCORE: bodyScoreLabel,
         IMAGE: dogImage,
         IMLINK: dogImage,
-        FREQUENCY : deliveryFrequency,
+        FREQUENCY: deliveryFrequency,
       },
     };
 
-     console.log('MailChimp Data:', mailChimpData);
+    console.log('MailChimp Data:', mailChimpData);
     // send data to mailchimp
     sendDataToMailChimp(mailChimpData);
 
@@ -735,7 +731,8 @@ const onSubmit = async (val) => {
       needs: { dailyAllowance, monthlyAllowance, idealBodyWeight },
     });
 
-  console.log(results.value);
-  slider.value?.update();
-}};
+    console.log(results.value);
+    slider.value?.update();
+  }
+};
 </script>
