@@ -3,7 +3,7 @@
   rel="stylesheet"
 >
 
-<div class="quiz-result-container" >
+<div class="">
   <button
     class="back-to-quiz"
     type="button"
@@ -18,13 +18,12 @@
         alt="Dog Image"
       >
 
-      <p class="round-day" v-text="`€${dog.cart.dailyPrice?.toFixed(2)} / ${$t('message.day')}`"></p>
+      <p class="round-day" v-text="`€${dog.cart.dailyPrice?.toFixed(2)}/day`"></p>
     </div>
 
     <div class="dog_title">
-      <h1 v-text="$t(`message.result_calculated_needs`, { dogName: dog.dogName })"></h1>
-      <h1 v-text="`${dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance}g / ${$t('message.day')}`"></h1>
-
+      <h1 v-text="`We Calculated ${dog.dogName} daily needs:`"></h1>
+      <h1 v-text="`${ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance}g/day`"></h1>
       <h2 class="text-black" v-text="$t('message.result_offer')"></h2>
       <p class="options" v-text="$t('message.result_options')"></p>
     </div>
@@ -51,10 +50,11 @@
             type="button"
             class="btn primary-btn success-action"
             @click="addToCart({ id:dog.samples.sampleId, quantity:1, selling_plan:'', name: dog.dogName })"
-            :disabled="alreadyCart.find(item => item.name == dog.dogName) || loading "
+            :disabled="alreadyCart.find(item => item.name == dog.dogName) || postal_code_not_found !== '' "
           >
             {% raw %}
-              <span v-text="$t('message.result_adding_cart')" v-if="loading"></span>
+              <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
+              <span v-text="$t('message.result_adding_cart')" v-else-if="loading"></span>
               <span v-text="$t('message.result_already_cart')" v-else-if="alreadyCart.find(item => item.product.variant_id == dog.samples.sampleId && item.name == dog.dogName)"></span>
               <span v-text="$t('message.result_sample_to_cart', { msg : dog.samples.closestSize  })" v-else></span>
             {% endraw %}
@@ -64,16 +64,6 @@
 
       <div class="subs-col">
         <h2 v-text="$t('message.result_personalized')"></h2>
-        <div style="margin-top: 20px; margin-bottom: 20px;">
-          {% raw %}
-            <p v-if="!postal_code_not_found">
-            </p>
-            <p v-else="postal_code_not_found" class="sucess-detail-quiz-result">
-              {{ $t('message.result_message_cover')}}
-          </p>
-          {% endraw %}
-        </div>
-
 
         <div class="info-row-quiz-result">
           <img
@@ -84,13 +74,9 @@
             width=""
             height=""
           >
-          <p class="sucess-detail-quiz-result">
-            {% raw %}
-              {{ $t('message.result_frequency')}} {{dog.deliveryFrequency}}
-            {% endraw %}
-          </p>
+          <p class="sucess-detail-quiz-result" v-text="$t('message.result_frequency')"></p>
         </div>
-        <div  class="info-row-quiz-result">
+        <div class="info-row-quiz-result">
           <img
             src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/Group_461.png?v=1691420070"
             alt="Quantity Icon"
@@ -99,16 +85,11 @@
             width=""
             height=""
           >
-          <div>
+          <p class="sucess-detail-quiz-result">
             {% raw %}
-            <p v-if="!postal_code_not_found" class="sucess-detail-quiz-result">
-                {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/{{ $t('message.day') }}).
-            </p>
-            <p v-else="postal_code_not_found"class="sucess-detail-quiz-result">
-                {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 6000 ? '15' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/{{ $t('message.day') }}).
-                </p>
-              {% endraw %}
-          </div>
+              {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/day).
+            {% endraw %}
+          </p>
         </div>
         <div class="info-row-quiz-result">
           <img
@@ -144,13 +125,20 @@
         <button
           type="button"
           class="btn primary-btn success-action subs-btn"
-          :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  loading "
+          :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  postal_code_not_found !== '' "
           @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})"
         >
           {% raw %}
-      <span v-if="loading">{{ $t('message.result_adding_cart') }}</span>
-          <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">{{ $t('message.result_already_cart') }}</span>
-          <span v-else>{{ $t('message.result_subs_to_cart') }}</span>
+            <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
+            <span v-else-if="loading">
+              {{ $t('message.result_adding_cart') }}
+            </span>
+            <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">
+              {{ $t('message.result_already_cart') }}
+            </span>
+            <span v-else="!loading">
+              {{ $t('message.result_subs_to_cart') }}
+            </span>
           {% endraw %}
         </button>
       </div>
