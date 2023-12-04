@@ -43,12 +43,8 @@
             type="button"
             class="btn primary-btn success-action"
             @click="addToCart({ id:dog.samples.sampleId, quantity:1, selling_plan:'', name: dog.dogName })"
-<<<<<<< HEAD
-            :disabled="alreadyCart.find(item => item.name == dog.dogName) || postal_code_not_found !== '' ">
-=======
             :disabled="alreadyCart.find(item => item.name == dog.dogName) || loading "
           >
->>>>>>> parent of ee900a3 (haroon)
             {% raw %}
               <span v-text="$t('message.result_adding_cart')" v-if="loading"></span>
               <span v-text="$t('message.result_already_cart')" v-else-if="alreadyCart.find(item => item.product.variant_id == dog.samples.sampleId && item.name == dog.dogName)"></span>
@@ -78,10 +74,6 @@
             class="icon-quiz-result"
             loading="lazy"
             width=""
-<<<<<<< HEAD
-            height="">
-          <p class="sucess-detail-quiz-result" v-text="$t('message.result_frequency')"></p>
-=======
             height=""
           >
           <p class="sucess-detail-quiz-result">
@@ -89,7 +81,6 @@
               {{ $t('message.result_frequency')}} {{dog.deliveryFrequency}}
             {% endraw %}
           </p>
->>>>>>> parent of ee900a3 (haroon)
         </div>
         <div  class="info-row-quiz-result">
           <img
@@ -98,12 +89,6 @@
             class="icon-quiz-result"
             loading="lazy"
             width=""
-<<<<<<< HEAD
-            height="">
-          <p class="sucess-detail-quiz-result">
-            {% raw %}
-              {{ $t('message.result_quantity' ) }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg {{ $t('message.result_kibbles' ) }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/day).
-=======
             height=""
           >
           <div>
@@ -117,23 +102,8 @@
               {% endraw %}
           </div>
         </div>
-        <div class="info-row-quiz-result">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/calculate_19efd556-7426-4aa3-9821-bc39e2e099d7.png?v=1678791464"
-            alt="Body Score Icon"
-            class="icon-quiz-result"
-            loading="lazy"
-            width=""
-            height=""
-          >
-          <p class="sucess-detail-quiz-result">
-            {% raw %}
-              {{ $t('message.result_ideal_weight') }} {{ dog.needs.idealBodyWeight?.toFixed(2) }}kg
->>>>>>> parent of ee900a3 (haroon)
-            {% endraw %}
-          </p>
-        </div>
-        <div class="info-row-quiz-result">
+
+                <div class="info-row-quiz-result">
           <img
             src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/hpPng.png?v=1681732081"
             alt="Price per Month Icon"
@@ -161,25 +131,9 @@
             {% endraw %}
           </p>
         </div>
-
-        <button
+                <button
           type="button"
           class="btn primary-btn success-action subs-btn"
-<<<<<<< HEAD
-          :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  postal_code_not_found !== '' "
-          @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})">
-          {% raw %}
-            <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
-            <span v-else-if="loading">
-              {{ $t('message.result_adding_cart' ) }}
-            </span>
-            <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">
-              {{ $t('message.result_already_cart' ) }}
-            </span>
-            <span v-else="!loading">
-              {{ $t('message.result_subs_to_cart' ) }}
-            </span>
-=======
           :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  loading "
           @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})"
         >
@@ -187,9 +141,11 @@
       <span v-if="loading">{{ $t('message.result_adding_cart') }}</span>
           <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">{{ $t('message.result_already_cart') }}</span>
           <span v-else>{{ $t('message.result_subs_to_cart') }}</span>
->>>>>>> parent of ee900a3 (haroon)
           {% endraw %}
         </button>
+
+        </div>
+
       </div>
     </div>
   </div>
