@@ -1,22 +1,15 @@
-<link
-  href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"
-  rel="stylesheet"
->
+<link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet">
 
 <div class="">
   <button
     class="back-to-quiz"
     type="button"
     @click="backToQuiz()"
-    v-html="$t('message.back_to_quiz')"
-  ></button>
+    v-html="$t('message.back_to_quiz')"></button>
 
   <div class="wrapper">
     <div class="image">
-      <img
-        :src="dog?.dogImage || 'https://for-franky-2023.myshopify.com/cdn/shop/files/Group_1.png'"
-        alt="Dog Image"
-      >
+      <img :src="dog?.dogImage || 'https://for-franky-2023.myshopify.com/cdn/shop/files/Group_1.png'" alt="Dog Image">
 
       <p class="round-day" v-text="`€${dog.cart.dailyPrice?.toFixed(2)}/day`"></p>
     </div>
@@ -42,16 +35,14 @@
           alt="Sample Kit"
           loading="lazy"
           width=""
-          height=""
-        >
+          height="">
 
         <div>
           <button
             type="button"
             class="btn primary-btn success-action"
             @click="addToCart({ id:dog.samples.sampleId, quantity:1, selling_plan:'', name: dog.dogName })"
-            :disabled="alreadyCart.find(item => item.name == dog.dogName) || postal_code_not_found !== '' "
-          >
+            :disabled="alreadyCart.find(item => item.name == dog.dogName) || postal_code_not_found !== '' ">
             {% raw %}
               <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
               <span v-text="$t('message.result_adding_cart')" v-else-if="loading"></span>
@@ -72,8 +63,7 @@
             class="icon-quiz-result"
             loading="lazy"
             width=""
-            height=""
-          >
+            height="">
           <p class="sucess-detail-quiz-result" v-text="$t('message.result_frequency')"></p>
         </div>
         <div class="info-row-quiz-result">
@@ -83,26 +73,10 @@
             class="icon-quiz-result"
             loading="lazy"
             width=""
-            height=""
-          >
+            height="">
           <p class="sucess-detail-quiz-result">
             {% raw %}
-              {{ $t('message.result_quantity') }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg  {{ $t('message.result_kibbles') }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/day).
-            {% endraw %}
-          </p>
-        </div>
-        <div class="info-row-quiz-result">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/calculate_19efd556-7426-4aa3-9821-bc39e2e099d7.png?v=1678791464"
-            alt="Body Score Icon"
-            class="icon-quiz-result"
-            loading="lazy"
-            width=""
-            height=""
-          >
-          <p class="sucess-detail-quiz-result">
-            {% raw %}
-              {{ $t('message.result_ideal_weight') }} {{ dog.needs.idealBodyWeight?.toFixed(2) }}kg
+              {{ $t('message.result_quantity' ) }} {{ dog.needs.monthlyAllowance > 12800 ? '12.8' : dog.needs.monthlyAllowance / 1000 }}kg {{ $t('message.result_kibbles' ) }}* = ({{ dog.needs.dailyAllowance > 500 ? '426' : dog.needs.dailyAllowance }}g/day).
             {% endraw %}
           </p>
         </div>
@@ -113,11 +87,24 @@
             class="icon-quiz-result"
             loading="lazy"
             width=""
-            height=""
-          >
+            height="">
           <p class="sucess-detail-quiz-result">
             {% raw %}
-              {{ $t('message.result_price_per_month') }} {{ dog.cart.adjustedPrice?.toFixed(2) }}€
+              {{ $t('message.result_price_per_month' ) }} {{ dog.cart.adjustedPrice?.toFixed(2) }}€
+            {% endraw %}
+          </p>
+        </div>
+        <div class="info-row-quiz-result">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0724/4270/8244/files/cancelAnytime.png?v=1701685986"
+            alt="Cancel Anytime Icon"
+            class="icon-quiz-result"
+            loading="lazy"
+            width=""
+            height="">
+          <p class="sucess-detail-quiz-result">
+            {% raw %}
+              {{ $t('message.result_cancel' ) }}
             {% endraw %}
           </p>
         </div>
@@ -126,18 +113,17 @@
           type="button"
           class="btn primary-btn success-action subs-btn"
           :disabled="alreadyCart.find(item => item.name == dog.dogName ) ||  postal_code_not_found !== '' "
-          @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})"
-        >
+          @click="addToCart({ id:dog.cart.currentVariantId, quantity:dog.cart.currentQuantity, selling_plan:dog.cart.currentPlan, name: dog.dogName})">
           {% raw %}
             <span v-text="$t('message.postal_code_not_found')" v-if="postal_code_not_found"></span>
             <span v-else-if="loading">
-              {{ $t('message.result_adding_cart') }}
+              {{ $t('message.result_adding_cart' ) }}
             </span>
             <span v-else-if="alreadyCart.find(item => item.product.variant_id == dog.cart.currentVariantId && item.name == dog.dogName)">
-              {{ $t('message.result_already_cart') }}
+              {{ $t('message.result_already_cart' ) }}
             </span>
             <span v-else="!loading">
-              {{ $t('message.result_subs_to_cart') }}
+              {{ $t('message.result_subs_to_cart' ) }}
             </span>
           {% endraw %}
         </button>
@@ -149,7 +135,6 @@
     <a
       href="{{ routes.cart_url }}"
       class="btn"
-      v-text="$t('message.checkout_btn')"
-    ></a>
+      v-text="$t('message.checkout_btn')"></a>
   </div>
 </div>
