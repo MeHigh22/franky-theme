@@ -1714,3 +1714,184 @@ a.a_btn.b_btn {
     gap: 5px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dog-grid .card {
+    padding: 0;
+}
+.dog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+}
+.dog-grid .card-head {
+    position: relative;
+    background: #f48f86;
+    border-radius: 25px 25px 0 0;
+}
+.animal-detail > h2 {
+    color: white !important;
+}
+.dog-grid .animal-img {
+    /*img is 150px because it would be to big for the card visually*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+  margin: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.dog-grid .animal-detail {
+    padding: 15px;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+}
+
+.dog-grid .animal-detail h2 {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid .animal-detail p {
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.dog-grid .card-body {
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    border: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    padding-top: 22px;
+}
+
+.dog-grid .animal-title h1 {
+    padding: 20px 20px 5px 20px;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dog-grid .badge {
+    position: relative;
+    font-size: 10px;
+    font-weight: 300;
+    color: #fff;
+    background: #43cea2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    top: -2px;
+    margin-left: 5px;
+}
+
+.dog-grid .animal-caption {
+    display: block;
+    padding: 0 20px;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.dog-grid .animal-info h4 {
+    font-size: 12px;
+    padding: 0 21px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid ul {
+    list-style: none;
+    font-size: 12px;
+    padding: 0;
+}
+
+.dog-grid .labels {
+  font-weight: 700;
+    text-transform: uppercase;
+    color: #404040;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.dog-grid .animal-discription h4 {
+    font-size: 12px;
+    padding: 0 21px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid .animal-discription p {
+    font-size: 12px;
+    padding: 0 28px;
+}
+
+.animal-info li:last-of-type {
+    border-bottom: 0;
+}
+.animal-info li {
+    font-size: 15px;
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 6px 25px;
+}
+a.p_btn.h_btn.subs-to-cart {
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin: 12px 20px 9px;
+}
+@media all and (max-width:980px) {
+  .dog-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 0px;
+}
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
