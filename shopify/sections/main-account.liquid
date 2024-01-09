@@ -309,7 +309,15 @@
 <script>
 
 document.addEventListener("DOMContentLoaded", (event) => {
+let orderItems = []
+  {% for order in customer.orders %}
+    orderItems.push({{ order.line_items | json }})
+{% endfor %}
 
+ 
+
+
+  
 //QUIZZ DATA FOR KRIBBLES
 const formDataKibbles = {
   '3Kg': {
@@ -1239,7 +1247,22 @@ const key = this.getAttribute('data-key').replace('.', '_');
   await addToCart(cartData);    
 })
 
-  
+  document.querySelectorAll('.subs-to-cart').forEach(function (e) {
+    const key = e.getAttribute('data-key').replace('.', '_');
+  const cartData = formDataKibbles[key]
+
+    orderItems.forEach(item => {
+  item.forEach(lineItem => {
+console.log(lineItem.variant_id)
+    if(lineItem.variant_id == cartData.items[0].id ) {
+    e.setAttribute("disabled", "true");
+    e.textContent = 'Already In Cart'
+    }
+
+  })
+})
+
+});
   
 });
   
@@ -1254,6 +1277,11 @@ const key = this.getAttribute('data-key').replace('.', '_');
     left: auto !important;
     z-index: 999999999;
     transform: translate3d(-20%,0,0) !important;
+}
+                a.p_btn.h_btn.subs-to-cart[disabled="true"] {
+    opacity: .6;
+    filter: grayscale(1);
+    pointer-events: none;
 }
                 
               </style>

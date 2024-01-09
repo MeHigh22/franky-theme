@@ -1,0 +1,103 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "548498a9-ccef-4a61-aacf-6e3f96dc2ca5": {
+      "type": "quiz-single-page",
+      "blocks": {
+        "f211f0a1-fbac-4862-940a-701af3878880": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/type_1_8ab66a97-05b9-45bb-a4f4-c8a9a0a855ed.png",
+            "text": "<p>Hypollaregenic food, no grains, no meat, no nasties <\/p>"
+          }
+        },
+        "798eeac6-13a2-4186-b905-9df081e8509e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/type_3_fac1f0ce-6d0d-4933-b65e-bf45022860ae.png",
+            "text": "<p>High quality proteins, and amino-acid content, from insects<\/p>"
+          }
+        },
+        "de412ec1-4488-4d87-8064-979dc623ed0b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/type_2_5596eb01-6510-45fe-9f98-f0989b7fee30.png",
+            "text": "<p>Natural source of Omega 3, and 6 rich in DHA and EPA from algae oil<\/p>"
+          }
+        },
+        "14cafd00-e548-405f-b98f-6929ec408920": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/type_4.png",
+            "text": "<p>Easy-to-digest formula for your furry friend's well-being<\/p>"
+          }
+        },
+        "6d6da4ef-7699-4bbe-8b73-7f8afd07e40e": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img2_6d47c0ca-68c5-4680-8f89-59ec3aebf980.png"
+          }
+        },
+        "023d0c27-e3ba-4e4a-8805-d21294df5e2c": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_462.png"
+          }
+        },
+        "f933a21b-8d43-474a-802a-e0dec558bbee": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tablet-nl-bg.png"
+          }
+        },
+        "8658aa41-f61c-4532-b846-ad1415dfa20c": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tablet-nl-bg.png"
+          }
+        },
+        "14400d51-67ec-4e57-8385-70a8689dac44": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img2.png"
+          }
+        },
+        "855ae0bb-7ff2-4105-9831-85b38248d36e": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img1.png"
+          }
+        }
+      },
+      "block_order": [
+        "f211f0a1-fbac-4862-940a-701af3878880",
+        "798eeac6-13a2-4186-b905-9df081e8509e",
+        "de412ec1-4488-4d87-8064-979dc623ed0b",
+        "14cafd00-e548-405f-b98f-6929ec408920",
+        "6d6da4ef-7699-4bbe-8b73-7f8afd07e40e",
+        "023d0c27-e3ba-4e4a-8805-d21294df5e2c",
+        "f933a21b-8d43-474a-802a-e0dec558bbee",
+        "8658aa41-f61c-4532-b846-ad1415dfa20c",
+        "14400d51-67ec-4e57-8385-70a8689dac44",
+        "855ae0bb-7ff2-4105-9831-85b38248d36e"
+      ],
+      "settings": {
+        "title": "Test Kit",
+        "description": "<p>Want to try us out first ? Sure thing ! Receive a test kit worth up to 2 weeks of dog foodPay delivery only ! <\/p>",
+        "grid_title": "Calculate your delivery fee here",
+        "quiz_text": "Try Now"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "548498a9-ccef-4a61-aacf-6e3f96dc2ca5"
+  ]
+}

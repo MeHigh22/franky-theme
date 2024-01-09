@@ -1558,7 +1558,6 @@ a.a_btn.b_btn {
   text-decoration: none;
   display: block;
   text-align: center;
-  margin: 7px;
   transition: all 200ms ease;
 }
 
@@ -1876,11 +1875,84 @@ a.p_btn.h_btn.subs-to-cart {
     display: block;
     margin: 12px 20px 9px;
 }
+
+body.quiz-collection .rte {
+    text-align: left;
+    margin-bottom: 25px;
+}
+.btn-flexs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.outline-btns {
+    color: black;
+    font-family: var(--font-heading-family);
+}
+a.solid-btn {
+    display: block;
+    font-family: var(--font-heading-family);
+    background: #f48f86;
+    padding: 10px 25px;
+    border-radius: 100px;
+}
+.quiz-price {
+    font-family: var(--font-heading-family);
+    font-size: 23px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.quiz-grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    margin-top: 140px;
+    gap: 30px;
+}
+
+.grid-boxes {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin-top: 30px;
+    align-items: center;
+    gap: 30px;
+}
+.grid-boxes:last-of-type {
+    margin-bottom: 40px;
+}
+.quiz-col-two h3 {
+    margin-top: 25px;
+}
+.nGY2 .nGY2GThumbnail, .nGY2 .nGY2GThumbnailImage {
+    background-color: #0000 !important;
+}
+
+.quiz-col-two a.p_btn.h_btn.quizOpen {
+    display: block;
+    text-align: center;
+    margin: 30px;
+    max-width: 300px;
+    padding: 15px;
+    text-transform: uppercase;
+}
 @media all and (max-width:980px) {
+  .grid-boxes {
+   grid-template-columns: 15% auto;
+    gap: 15px;
+}
+  .quiz-grid-two {
+    grid-template-columns: auto;
+}
   .dog-grid {
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-gap: 0px;
+}
+  .section_6>img {
+    position: relative;
+    top: -46px;
+    margin-top: 42px;
 }
 }
  

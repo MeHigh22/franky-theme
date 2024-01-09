@@ -20,7 +20,7 @@
   "result_already_cart": "Already In Cart",
   "result_sample_to_cart": "Add {msg} kg Sample to Cart",
   "result_calculated_needs": "We Calculated {dogName} daily needs:",
-  "result_message_cover" : "We do not fully cover your area just yet, Kibbles boxes are therefore larger and delivery frequency longer.",
+  "result_message_cover": "We do not fully cover your area just yet, Kibbles boxes are therefore larger and delivery frequency longer.",
   "day": "day",
   "back_to_quiz": "&#8592; Back to quiz",
   "quiz_detail_title": "Details for {msg}",
@@ -56,6 +56,13 @@
   "remove_dog": "Remove Dog",
   "nothing_found": "Nothing Found",
   "checkout_btn": "Proceed To Checkout",
+
+  "very_thin_des": "Ribs, lumbar vertebrae, pelvic bones and all bony prominences evident from a distance. No discernible body fat. Obvious loss of muscle mass",
+  "slightly_underweight_des": "Ribs easily palpated and may be visible with no palpable fat. Tops of lumbar vertebrae visible. Pelvic bones becoming prominent. Obvious waist and abdominal tuck.",
+  "ideal_des": "Ribs palpable without excess fat covering. Waist observed behind ribs when viewed from above. Abdomen tucked up when viewed from side.",
+  "overweight_des": "Ribs palpable with difficulty; heavy fat cover. Noticeable fat deposits over lumbar area and base of tail. Waist absent or barely visible. Abdominal tuck may be present.",
+  "obese_des": "Massive fat deposits over thorax, spine and base of tail. Waist and abdominal tuck absent. Fat deposits on neck and limbs. Obvious abdominal distention.",
+
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",

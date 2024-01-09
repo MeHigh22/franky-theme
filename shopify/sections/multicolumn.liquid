@@ -104,6 +104,10 @@
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
+                {%- if block.settings.liquid != blank -%}
+                  <div>{{ block.settings.liquid }}</div>
+                {%- endif -%}
+
                 {%- if block.settings.link_label != blank -%}
                   <a
                     class="link animate-arrow"
@@ -401,6 +405,11 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+                {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "Liquid Text"
         },
         {
           "type": "text",

@@ -3,17 +3,54 @@
     <div class="close" id="close-button">X</div>
     <ul class="menus nav">
       {% for b in section.blocks %}
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            :class="$store.state.step.currentStep == {{ forloop.index0 }} ? 'active': ''"
-            href="#step-{{ forloop.index }}"
-          >
-            <div>{{ b.settings.tab }}</div>
-            <div class="num">{{ forloop.index }}</div>
-          </a>
-        </li>
+        {% if forloop.index == 1 %}
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="$store.state.step.currentStep == {{ forloop.index0 }} ? 'active': ''"
+              href="#step-{{ forloop.index }}"
+            >
+              <div>{{ b.settings.tab }}</div>
+              <div class="num">1</div>
+            </a>
+          </li>
+        {% endif %}
+
+        {% if forloop.index == 2 %}
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              :class="$store.state.step.currentStep == 11 ? '' : $store.state.step.currentStep  >= 1 ? 'active' : ''"
+              href="#step-{{ forloop.index }}"
+            >
+              <div>{{ b.settings.tab }}</div>
+              <div class="num">2</div>
+            </a>
+          </li>
+        {% endif %}
       {% endfor %}
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          :class="$store.state.step.currentStep == 11 ? 'active': ''"
+          href="#step-{{ forloop.index }}"
+        >
+          <div>Review</div>
+          <div class="num">3</div>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          :class="$store.state.step.currentStep == 12 ? 'active': ''"
+          href="#step-{{ forloop.index }}"
+        >
+          <div>CART</div>
+          <div class="num">4</div>
+        </a>
+      </li>
     </ul>
 
     <form id="quizForm" class="">
