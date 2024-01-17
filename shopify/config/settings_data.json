@@ -150,7 +150,7 @@
               "step": "",
               "tab": "Welcome",
               "small_text": "Welcome",
-              "heading": "For Franky is LIVE !",
+              "heading": "let's get the fun started !",
               "paragrapgh": "<p>Fill out the following questions so we can send your furry friend's daily needs!<\/p>",
               "stepInput": ""
             }
@@ -159,7 +159,7 @@
             "type": "step",
             "settings": {
               "step": "dog_name",
-              "tab": "Dog's name",
+              "tab": "Quizz",
               "small_text": "Step 2\/9",
               "heading": "What's your dog's name?",
               "paragrapgh": "",

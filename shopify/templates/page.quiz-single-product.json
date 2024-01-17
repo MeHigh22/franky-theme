@@ -91,7 +91,7 @@
       "settings": {
         "title": "Test Kit",
         "description": "<p>Want to try us out first ? Sure thing ! Receive a test kit worth up to 2 weeks of dog foodPay delivery only ! <\/p>",
-        "grid_title": "Calculate your delivery fee here",
+        "grid_title": "",
         "quiz_text": "Try Now"
       }
     }

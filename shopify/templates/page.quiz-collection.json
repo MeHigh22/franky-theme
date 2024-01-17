@@ -14,14 +14,14 @@
         "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand<\/p>",
-            "heading_size": "h1"
+            "heading": "<p>We care about your dog<\/p>",
+            "heading_size": "h0"
           }
         },
         "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>We care about our dogs' well-being. That's why we continually invest in research, development and product improvement. Our formula has been specially created to offer your dog optimal nutritional balance while minimizing our environmental footprint. Try us now ! Start a custom subscription or try out our free sample first, you'll pay only a small delivery charge, and we'll take care of the rest.<\/p>"
           }
         }
       },
@@ -55,10 +55,10 @@
         "14829770-8915-42ba-916c-ff20811e4c66": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img2_6d47c0ca-68c5-4680-8f89-59ec3aebf980.png",
-            "title": "Test package",
-            "text": "<p>Not sure yet ? try us out !<\/p>",
-            "liquid": "<div class=\"quiz-price\"> €5.99 (just pay your shipping costs) <\/div>\n\n<div class=\"btn-flexs\">\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"outline-btns hidden\"> More Info <\/a>\n  <\/div>\n\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"solid-btn\">More info<\/a>\n  <\/div>\n<\/div>",
+            "image": "shopify:\/\/shop_images\/fffgg.png",
+            "title": "Free test package",
+            "text": "<p>Pay delivery only, we take care of the rest<\/p>",
+            "liquid": "<div class=\"quiz-price\"> €0,00 <\/div>\n\n<div class=\"btn-flexs\">\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"outline-btns hidden\"> More Info <\/a>\n  <\/div>\n\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"solid-btn\">More info<\/a>\n  <\/div>\n<\/div>",
             "link_label": "",
             "link": "#"
           }

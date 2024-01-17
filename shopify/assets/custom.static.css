@@ -907,6 +907,7 @@ details-modal.header__search {
   min-height: 628px;
   display: flex;
   flex-wrap: wrap;
+  margin: 20px;
   align-content: flex-end;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -1914,9 +1915,7 @@ a.solid-btn {
 .grid-boxes {
     display: grid;
     grid-template-columns: 20% 80%;
-    margin-top: 30px;
     align-items: center;
-    gap: 30px;
 }
 .grid-boxes:last-of-type {
     margin-bottom: 40px;

@@ -30,7 +30,7 @@
   "result_quantity": "Quantité :",
   "result_kibbles": "Croquettes",
   "result_ideal_weight": "Poids corporel idéal :",
-  "result_price_per_month": "Prix/mois pour une alimentation complète :",
+  "result_price_per_month": "Prix\/mois pour une alimentation complète :",
   "result_cancel": "Annulez quand vous voulez",
   "result_subs_to_cart": "AJOUTER L'ABONNEMENT AU PANIER",
   "customer_created": "Client créé avec succès",
@@ -39,10 +39,10 @@
   "add_to_cart": "{msg} ajouté au panier",
   "nothing_added_cart": "Rien ajouté au panier",
   "dog_image": "Image du chien",
-  "low_activity": "Faible activité (< 1h/jour)",
-  "high_activity": "Activité élevée (3-6h/jour - Chiens de travail, chiens de berger)",
-  "moderate_activity_high": "Activité modérée (1-3h/jour - Fort impact)",
-  "moderate_activity": "Activité modérée (1-3h/jour - Faible impact)",
+  "low_activity": "Faible activité (< 1h\/jour)",
+  "high_activity": "Activité élevée (3-6h\/jour - Chiens de travail, chiens de berger)",
+  "moderate_activity_high": "Activité modérée (1-3h\/jour - Fort impact)",
+  "moderate_activity": "Activité modérée (1-3h\/jour - Faible impact)",
   "spayed": "Stérilisé",
   "castrated": "Castré",
   "not_sterilized": "Non stérilisé ou castré",
@@ -57,13 +57,11 @@
   "remove_dog": "Effacer Chien",
   "nothing_found": "Rien trouvé",
   "checkout_btn": "Passer à la caisse",
-
-  "very_thin_des": "Ribs, lumbar vertebrae, pelvic bones and all bony prominences evident from a distance. No discernible body fat. Obvious loss of muscle mass",
-  "slightly_underweight_des": "Ribs easily palpated and may be visible with no palpable fat. Tops of lumbar vertebrae visible. Pelvic bones becoming prominent. Obvious waist and abdominal tuck.",
-  "ideal_des": "Ribs palpable without excess fat covering. Waist observed behind ribs when viewed from above. Abdomen tucked up when viewed from side.",
-  "overweight_des": "Ribs palpable with difficulty; heavy fat cover. Noticeable fat deposits over lumbar area and base of tail. Waist absent or barely visible. Abdominal tuck may be present.",
-  "obese_des": "Massive fat deposits over thorax, spine and base of tail. Waist and abdominal tuck absent. Fat deposits on neck and limbs. Obvious abdominal distention.",
-
+  "very_thin_des": "Les côtes, les vertèbres lombaires, les os pelviens et toutes les saillies osseuses sont visibles de loin. Aucune graisse corporelle discernable. Perte évidente de masse musculaire.",
+  "slightly_underweight_des": "Les côtes sont facilement palpables et peuvent être visibles sans graisse palpable. Les sommets des vertèbres lombaires sont visibles. Les os pelviens deviennent proéminents. Taille évidente et creux abdominal.",
+  "ideal_des": "Les côtes sont palpables sans excès de graisse. La taille est visible derrière les côtes lorsqu'on regarde d'en haut. L'abdomen est rentré lorsqu'on regarde de côté.",
+  "overweight_des": "Les côtes sont palpables avec difficulté ; couverture graisseuse importante. Dépôts de graisse remarquables sur la région lombaire et à la base de la queue. Taille absente ou à peine visible. Un creux abdominal peut être présent.",
+  "obese_des": "Importants dépôts de graisse sur le thorax, la colonne vertébrale et la base de la queue. Taille et creux abdominal absents. Dépôts de graisse sur le cou et les membres. Distension abdominale évidente.",
   "general": {
     "password_page": {
       "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
@@ -72,7 +70,7 @@
       "login_form_password_placeholder": "Votre mot de passe",
       "login_form_error": "Mot de passe incorrect !",
       "login_form_submit": "Saisir",
-      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"/admin\" class=\"link underlined-link\">Se connecter ici</a>",
+      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"\/admin\" class=\"link underlined-link\">Se connecter ici<\/a>",
       "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
     },
     "social": {
@@ -184,7 +182,7 @@
         "minimum_of": "Minimum de {{ quantity }}",
         "maximum_of": "Maximum de {{ quantity }}",
         "multiples_of": "Incréments de {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> dans le panier"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> dans le panier"
       },
       "price": {
         "from_price_html": "Du {{ price }}",
@@ -203,8 +201,8 @@
         "view_store_info": "Afficher les informations de la boutique",
         "check_other_stores": "Vérifier la disponibilité dans d'autres boutiques",
         "pick_up_available": "Service de retrait disponible",
-        "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}<\/span>",
         "unavailable": "Impossible de charger la disponibilité du service de retrait",
         "refresh": "Actualiser"
       },
@@ -220,7 +218,7 @@
       },
       "view_full_details": "Afficher tous les détails",
       "include_taxes": "Taxes incluses.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
       "choose_options": "Choisir des options",
       "choose_product_options": "Choisir des options pour {{ product_name }}",
       "value_unavailable": "{{ option_value }} – indisponible",
@@ -233,7 +231,9 @@
       "inventory_out_of_stock": "En rupture de stock",
       "inventory_out_of_stock_continue_selling": "En stock"
     },
-    "modal": { "label": "Galerie de supports multimédias" },
+    "modal": {
+      "label": "Galerie de supports multimédias"
+    },
     "facets": {
       "apply": "Appliquer",
       "clear": "Effacer",
@@ -303,7 +303,9 @@
       "suggestions": "Suggestions",
       "pages": "Pages"
     },
-    "cart": { "cart": "Panier" },
+    "cart": {
+      "cart": "Panier"
+    },
     "contact": {
       "form": {
         "name": "Nom",
@@ -316,7 +318,10 @@
         "title": "Formulaire de contact"
       }
     },
-    "404": { "title": "Page non trouvée", "subtext": "404" }
+    "404": {
+      "title": "Page non trouvée",
+      "subtext": "404"
+    }
   },
   "sections": {
     "header": {
@@ -339,9 +344,9 @@
       "empty": "Votre panier est vide",
       "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
       "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">frais d'expédition</a> calculés lors du paiement",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">frais d'expédition<\/a> calculés lors du paiement",
       "taxes_included_but_shipping_at_checkout": "Taxes incluses et frais d'expédition calculés lors du paiement",
-      "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
+      "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
       "taxes_and_shipping_at_checkout": "Taxes et frais d'expédition calculés lors du paiement",
       "headings": {
         "product": "Produit",
@@ -353,10 +358,12 @@
       "update": "Mettre à jour",
       "login": {
         "title": "Vous possédez un compte ?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous</a> pour payer plus vite."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous<\/a> pour payer plus vite."
       }
     },
-    "footer": { "payment": "Moyens de paiement" },
+    "footer": {
+      "payment": "Moyens de paiement"
+    },
     "featured_blog": {
       "view_all": "Tout afficher",
       "onboarding_title": "Article de blog",
@@ -366,13 +373,17 @@
       "view_all": "Tout afficher",
       "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}"
     },
-    "collection_list": { "view_all": "Tout afficher" },
+    "collection_list": {
+      "view_all": "Tout afficher"
+    },
     "collection_template": {
       "title": "Collection",
       "empty": "Aucun produit trouvé",
-      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout supprimer</a>"
+      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout supprimer<\/a>"
     },
-    "video": { "load_video": "Charger la vidéo : {{ description }}" },
+    "video": {
+      "load_video": "Charger la vidéo : {{ description }}"
+    },
     "slideshow": {
       "load_slide": "Charger la diapositive",
       "previous_slideshow": "Diapositive précédente",
@@ -382,13 +393,15 @@
       "carousel": "Carrousel",
       "slide": "Diapositive"
     },
-    "page": { "title": "Titre de la page" }
+    "page": {
+      "title": "Titre de la page"
+    }
   },
   "localization": {
-    "country_label": "Pays/région",
+    "country_label": "Pays\/région",
     "language_label": "Langue",
     "update_language": "Mettre à jour la langue",
-    "update_country": "Mettre à jour le pays/la région"
+    "update_country": "Mettre à jour le pays\/la région"
   },
   "customer": {
     "account": {
@@ -417,7 +430,7 @@
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "Ville",
-      "country": "Pays/région",
+      "country": "Pays\/région",
       "province": "Province",
       "zip": "Code postal",
       "phone": "Téléphone",

@@ -20,7 +20,7 @@
         "template--17965264601364__02ef7ed8-ab39-4d20-88b8-99bb39fabc2b-1680532088bbc77d29-2": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Try now",
+            "button_label_1": "Shop now",
             "button_link_1": "\/pages\/our-product#quizz",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -148,7 +148,8 @@
       ],
       "custom_css": [
         ".subtitle {line-height: 55px;}",
-        ".ref-title {padding-top: 20px;}"
+        ".ref-title {padding-top: 20px;}",
+        "@media screen and (max-width: 425px) {.section_2_types-image img {margin: auto; }}"
       ],
       "settings": {
         "text_carousel": "Some of our happy customers",
@@ -167,62 +168,83 @@
         "text_7": "Rich in insect proteins, healthy fats and amino acids. A healthy and sustainable alternative to fish and meat.",
         "text_8": "Easy to Digest",
         "text_9": "Our mealworms are an excellent source of highly digestible protein. Our algae oil provides Omega 3 and DHA, both of which have a proven role in maintaining and restoring intestinal balance.",
-        "link_tryNow": "Try now",
+        "link_tryNow": "Shop now",
         "link_1": "\/pages\/our-product#quizz",
         "link_learnMore": "Learn more",
         "link_2": "\/pages\/our-product"
       }
     },
-    "0a4d44ca-957f-420c-a493-a387014c6782": {
-      "type": "collapsible-content",
+    "rich_text_pGhWMr": {
+      "type": "rich-text",
       "blocks": {
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-1": {
-          "type": "collapsible_row",
+        "heading_8yaiKd": {
+          "type": "heading",
           "settings": {
-            "heading": "Made in Belgium",
-            "icon": "map_pin",
-            "row_content": "<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>",
-            "page": ""
-          }
-        },
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-2": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Easy subscription plan",
-            "icon": "lightning_bolt",
-            "row_content": "<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>",
-            "page": ""
-          }
-        },
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Cancel anytime",
-            "icon": "return",
-            "row_content": "<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>",
-            "page": ""
+            "heading": "<h1>What to expect with For Franky<\/h1>",
+            "heading_size": "h1"
           }
         }
       },
       "block_order": [
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-1",
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-2",
-        "template--20080239706454__0a4d44ca-957f-420c-a493-a387014c6782-collapsible_row-3"
+        "heading_8yaiKd"
       ],
       "settings": {
-        "class": "",
-        "caption": "",
-        "heading": "What to expect with For Franky",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "accent-2",
-        "container_color_scheme": "background-2",
-        "open_first_collapsible_row": true,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_first",
-        "padding_top": 48,
-        "padding_bottom": 36
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "whyus_section_1_fciDiX": {
+      "type": "whyus_section_1",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/bgZinc_aac3c963-8591-4c4c-9791-7a5b51cea4ad.png",
+        "image_2": "shopify:\/\/shop_images\/Group_434.png",
+        "image_3": "shopify:\/\/shop_images\/Group_434.png",
+        "image_4": "shopify:\/\/shop_images\/Group_434.png",
+        "image_5": "shopify:\/\/shop_images\/Group_434.png",
+        "image_6": "shopify:\/\/shop_images\/Group_433.png",
+        "image_7": "shopify:\/\/shop_images\/Group_433.png",
+        "image_8": "shopify:\/\/shop_images\/Group_435.png",
+        "image_9": "shopify:\/\/shop_images\/Group_435.png",
+        "image_10": "shopify:\/\/shop_images\/Group_183.png",
+        "text_1": "Made in Belgium",
+        "text_2": "we focused on delivering vegetables that are either produced in Belgium or come from neighboring countries.",
+        "text_3": "Insect based dog food",
+        "text_4": "Our proteins come from dried mealworms that are cleaner and healthier than your average meat or fish protein.",
+        "text_5": "Flexible subscription plan",
+        "text_6": "Based on your dog's information, we’ll propose a monthly plan that will suit you and your dog. And you can cancel ANYTIME",
+        "text_7": "Ecological delivery",
+        "text_8": "We only work together with the most environmental companies to provide a clean and flexible delivery at home."
+      }
+    },
+    "rich_text_dGtpAx": {
+      "type": "rich-text",
+      "blocks": {
+        "button_paWVf8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Check our products",
+            "button_link": "shopify:\/\/pages\/quiz-collection",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_paWVf8"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 12
       }
     },
     "000694ae-e761-4211-b548-27e5ef36b1ec": {
@@ -280,14 +302,14 @@
         "text_1": "How does it work",
         "text_2": "Subscription based. Worry free.",
         "text_3": "Our monthly subscriptions are tailored to you and your dog’s needs. Want to try out first? No worries, use our calculator so we know what to send you! Pay only €5,99 delivery and receive up to two weeks of our dog food for free! Check down below how it works!",
-        "call_to_action": "Try For Franky",
+        "call_to_action": "Shop For Franky",
         "text_4": "“Answer 8 simple questions online”.",
         "text_5": "",
         "text_6": "“We calculate your dog’s daily needs”.",
         "text_7": "",
         "text_8": "Get notified when we are live and subscribe to our monthly deliveries",
         "text_9": "",
-        "call_to_action_two": "Try For Franky",
+        "call_to_action_two": "Shop For Franky",
         "link_1": "\/pages\/our-product#quizz"
       }
     },
@@ -305,7 +327,7 @@
         "text_2": "Stay in the loop ! We will send you an email once in a while with information catered to your dogs need & wellbeing, special offers and invitations to exclusive events!",
         "text_3": "#",
         "read_posts": "Read all posts",
-        "call_to_action": "Try For Franky"
+        "call_to_action": "Shop For Franky"
       }
     }
   },
@@ -313,7 +335,9 @@
     "02ef7ed8-ab39-4d20-88b8-99bb39fabc2b",
     "d490912c-3294-42aa-b636-8d117cae6e39",
     "1c94bda0-a6db-406a-a243-b3b2785aa770",
-    "0a4d44ca-957f-420c-a493-a387014c6782",
+    "rich_text_pGhWMr",
+    "whyus_section_1_fciDiX",
+    "rich_text_dGtpAx",
     "000694ae-e761-4211-b548-27e5ef36b1ec",
     "330693c2-5a9d-4b1d-85f9-632a3853b9dd",
     "d301bd3c-62ab-4f6c-bb61-2e44c86bd6d0",

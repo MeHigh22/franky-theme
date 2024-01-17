@@ -105,7 +105,21 @@
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
                 {%- if block.settings.liquid != blank -%}
-                  <div>{{ block.settings.liquid }}</div>
+                  <div>
+                    
+                    <div class="quiz-price"> {{ block.settings.price }} </div>
+
+                    <div class="btn-flexs">
+                      <div>
+                        <a href="/pages/quiz-single-product-1" class="outline-btns hidden"> {{ block.settings.info1 }} </a>
+                      </div>
+                    
+                      <div>
+                        <a href="/pages/quiz-single-product-1" class="solid-btn">{{ block.settings.info2 }}</a>
+                      </div>
+                    </div>
+                  
+                  </div>
                 {%- endif -%}
 
                 {%- if block.settings.link_label != blank -%}
@@ -410,6 +424,21 @@
           "type": "liquid",
           "id": "liquid",
           "label": "Liquid Text"
+        },
+         {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+         {
+          "type": "text",
+          "id": "info1",
+          "label": "Info btn 1"
+        },
+         {
+          "type": "text",
+          "id": "info2",
+          "label": "Info btn 2"
         },
         {
           "type": "text",

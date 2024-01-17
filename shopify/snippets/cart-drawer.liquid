@@ -39,13 +39,13 @@
 
                 {% if request.path contains '/fr' %}
                   <a class="a_btn b_btn quizOpen"> Quiz pour inscription </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/fr/account/login" style="margin-top: 20px;"> Connexion </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/fr/account" style="margin-top: 20px;"> Connexion </a>
                 {% elsif request.path contains '/nl' %}
                   <a class="a_btn b_btn quizOpen"> Registratie quiz </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/nl/account/login" style="margin-top: 20px;"> Inloggen </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/nl/account" style="margin-top: 20px;"> Inloggen </a>
                 {% else %}
                   <a class="a_btn b_btn quizOpen"> Registration quiz </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/account/login" style="margin-top: 20px;"> Login </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/account" style="margin-top: 20px;"> Login </a>
                 {% endif %}
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
