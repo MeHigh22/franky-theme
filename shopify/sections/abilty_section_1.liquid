@@ -53,7 +53,16 @@
     </div>
   </div>
   <div class="benifets_last">
-    <a class="p_btn_2 quizOpen">{{ section.settings.text_9 }}</a>
+    <a class="p_btn_2 " 
+                          {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+      >{{ section.settings.text_9 }}</a>
   </div>
 </div>
 

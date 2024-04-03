@@ -907,6 +907,7 @@ details-modal.header__search {
   min-height: 628px;
   display: flex;
   flex-wrap: wrap;
+  margin: 20px;
   align-content: flex-end;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -1019,7 +1020,6 @@ a.p_btn.h_btn {
   font-weight: bold;
 }
 header .list-menu__item {
-  padding: 6px 15px;
   color: #4b9c8e !important;
 }
 header .header__active-menu-item {
@@ -1373,6 +1373,8 @@ html {
   margin: auto;
 }
 
+
+
 @media all and (min-width: 980px) {
   #quiz svg.arrow.arrow--left {
     left: 10vw;
@@ -1444,12 +1446,28 @@ html {
     overflow: hidden;
   }
   ul.list-menu.list-menu--inline {
-    margin-left: 25%;
+    margin-left: 7%;
     width: 100%;
   }
   .bgRight img {
     width: 100%;
     margin-left: 80px;
+  }
+}
+
+@media all and (min-width: 1250px) {
+  ul.list-menu.list-menu--inline {
+    margin-left: 15% !important;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .or.or--y {
+    display: none;
+  }
+    a.p_btn.h_btn {
+    display: none;
   }
 }
 
@@ -1558,7 +1576,6 @@ a.a_btn.b_btn {
   text-decoration: none;
   display: block;
   text-align: center;
-  margin: 7px;
   transition: all 200ms ease;
 }
 
@@ -1714,3 +1731,265 @@ a.a_btn.b_btn {
     gap: 5px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dog-grid .card {
+    padding: 0;
+}
+.dog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+}
+.dog-grid .card-head {
+    position: relative;
+    background: #f48f86;
+    border-radius: 25px 25px 0 0;
+}
+.animal-detail > h2 {
+    color: white !important;
+}
+.dog-grid .animal-img {
+    /*img is 150px because it would be to big for the card visually*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+  margin: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.dog-grid .animal-detail {
+    padding: 15px;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+}
+
+.dog-grid .animal-detail h2 {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid .animal-detail p {
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.dog-grid .card-body {
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    border: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    padding-top: 22px;
+}
+
+.dog-grid .animal-title h1 {
+    padding: 20px 20px 5px 20px;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dog-grid .badge {
+    position: relative;
+    font-size: 10px;
+    font-weight: 300;
+    color: #fff;
+    background: #43cea2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    top: -2px;
+    margin-left: 5px;
+}
+
+.dog-grid .animal-caption {
+    display: block;
+    padding: 0 20px;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.dog-grid .animal-info h4 {
+    font-size: 12px;
+    padding: 0 21px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid ul {
+    list-style: none;
+    font-size: 12px;
+    padding: 0;
+}
+
+.dog-grid .labels {
+  font-weight: 700;
+    text-transform: uppercase;
+    color: #404040;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.dog-grid .animal-discription h4 {
+    font-size: 12px;
+    padding: 0 21px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.dog-grid .animal-discription p {
+    font-size: 12px;
+    padding: 0 28px;
+}
+
+.animal-info li:last-of-type {
+    border-bottom: 0;
+}
+.animal-info li {
+    font-size: 15px;
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 6px 25px;
+}
+a.p_btn.h_btn.subs-to-cart {
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin: 12px 20px 9px;
+}
+
+body.quiz-collection .rte {
+    text-align: left;
+    margin-bottom: 25px;
+}
+.btn-flexs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.outline-btns {
+    color: black;
+    font-family: var(--font-heading-family);
+}
+a.solid-btn {
+    display: block;
+    font-family: var(--font-heading-family);
+    background: #f48f86;
+    padding: 10px 25px;
+    border-radius: 100px;
+}
+.quiz-price {
+    font-family: var(--font-heading-family);
+    font-size: 23px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.quiz-grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    margin-top: 140px;
+    gap: 30px;
+}
+
+.grid-boxes {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+}
+.grid-boxes:last-of-type {
+    margin-bottom: 40px;
+}
+.quiz-col-two h3 {
+    margin-top: 25px;
+}
+.nGY2 .nGY2GThumbnail, .nGY2 .nGY2GThumbnailImage {
+    background-color: #0000 !important;
+}
+
+.quiz-col-two a.p_btn.h_btn.quizOpen {
+    display: block;
+    text-align: center;
+    margin: 30px;
+    max-width: 300px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+@media all and (max-width:980px) {
+  .grid-boxes {
+   grid-template-columns: 15% auto;
+    gap: 15px;
+}
+  .quiz-grid-two {
+    grid-template-columns: auto;
+}
+  .dog-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 0px;
+}
+  .section_6>img {
+    position: relative;
+    top: -46px;
+    margin-top: 42px;
+}
+}
+ 
+img.nGY2ViewerMedia {
+    min-width: 70% !IMPORTANT;
+    height: auto !important;
+    max-width: 100% !important;
+    transform: none !important;
+}
+
+
+
+
+
+body.cart cart-drawer.drawer {
+    display: none;
+}
+
+
+
+
+
+
+

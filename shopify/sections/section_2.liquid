@@ -78,7 +78,21 @@
           </div>
           <div class="pure-u-1 ">
             <div class="section_2-button">
-              <a  class="p_btn_3 quizOpen">{{ section.settings.link_tryNow }}</a>
+              <a  class="p_btn_3" 
+                
+                    {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+                
+                
+                >
+              
+              
+              {{ section.settings.link_tryNow }}</a>
               <a href="{{ section.settings.link_2 }}" class="section_2-button-2">{{ section.settings.link_learnMore }}</a>
             </div>
           </div>

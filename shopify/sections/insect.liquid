@@ -277,7 +277,16 @@ margin-right: 4rem;
         </div>
         <div class="insectanother">
           <div class="insectitem5">
-              <button class="quizOpen">{{ section.settings.call_to_action }}</button>            
+              <button class="p_btn h_btn" 
+                                    {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+                >{{ section.settings.call_to_action }}</button>            
           </div>
           {% comment %}
 

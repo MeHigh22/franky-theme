@@ -48,7 +48,16 @@
         </ul>
       </div>
       <div class="careAboutBtn">
-        <a class="quizOpen">{{ section.settings.call_to_action }}</a>
+        <a class="" 
+                              {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+          >{{ section.settings.call_to_action }}</a>
       </div>
     </div>
     <div id="careDogImg" class="lft-ImgCareSection">

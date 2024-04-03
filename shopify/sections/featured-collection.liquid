@@ -87,6 +87,7 @@
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
+              show_description1: section.settings.show_description1,
               show_vendor: section.settings.show_vendor,
               show_rating: section.settings.show_rating,
               show_quick_add: section.settings.enable_quick_add,
@@ -96,7 +97,7 @@
         {%- else -%}
           {%- for i in (1..4) -%}
             <li class="grid__item">
-              {% render 'card-product', show_vendor: section.settings.show_vendor %}
+              {% render 'card-product', show_vendor: section.settings.show_vendor, show_description1: section.settings.show_description1 %}
             </li>
           {%- endfor -%}
         {%- endfor -%}
@@ -339,6 +340,12 @@
       "id": "show_vendor",
       "default": false,
       "label": "t:sections.featured-collection.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description1",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_description1"
     },
     {
       "type": "checkbox",

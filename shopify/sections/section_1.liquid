@@ -25,7 +25,16 @@
         {% if section.settings.description != blank %}
           {{ section.settings.description }}
         {% endif %}
-        <a class="p_btn quizOpen">{{ section.settings.call_to_action }}</a>
+        <a class="p_btn" 
+                              {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+          >{{ section.settings.call_to_action }}</a>
       </div>
       <div class="bgRight pure-u-1 pure-u-md-14-24">
         <img class="right_img" src="{{ section.settings.image_2 | image_url }}" alt="">

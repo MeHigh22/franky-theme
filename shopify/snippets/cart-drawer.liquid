@@ -39,13 +39,13 @@
 
                 {% if request.path contains '/fr' %}
                   <a class="a_btn b_btn quizOpen"> Quiz pour inscription </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/fr/account/login" style="margin-top: 20px;"> Connexion </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/fr/account" style="margin-top: 20px;"> Connexion </a>
                 {% elsif request.path contains '/nl' %}
                   <a class="a_btn b_btn quizOpen"> Registratie quiz </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/nl/account/login" style="margin-top: 20px;"> Inloggen </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/nl/account" style="margin-top: 20px;"> Inloggen </a>
                 {% else %}
                   <a class="a_btn b_btn quizOpen"> Registration quiz </a> <br>
-                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/en/account/login" style="margin-top: 20px;"> Login </a>
+                  <a class="p_btn_3 loginButton" href="https://www.forfranky.be/account" style="margin-top: 20px;"> Login </a>
                 {% endif %}
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -320,17 +320,21 @@
                             {% endcomment %}
 
                             <cart-remove-button
-                              id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
-                              data-index="{{ item.index | plus: 1 }}"
-                            >
-                              <button
-                                type="button"
-                                class="button button--tertiary"
-                                aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                                id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
+                                data-index="{{ item.index | plus: 1 }}"
                               >
-                                {% render 'icon-remove' %}
-                              </button>
-                            </cart-remove-button>
+                                                           <a href="/">
+                                <button
+                                  type="button"
+                                  class="button button--tertiary"
+                                  aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                                >
+     
+                                  {% render 'icon-remove' %}
+                                </button>
+                                                                                   </a>
+
+                              </cart-remove-button>
                           </div>
 
                           <div
@@ -366,13 +370,13 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
         {% if cart.item_count != 0 %}
-          {% if shop.locale == 'fr' %}
-            <span> ⚠️ Pour restaurer un article supprimé, vous devrez refaire le quiz </span>
-          {% elsif shop.locale == 'nl' %}
-            <span> ⚠️ Om een verwijderd item te herstellen, moet je de quiz opnieuw doen </span>
-          {% else %}
-            <span> ⚠️ To restore a deleted item, you will need to take the quiz again </span>
-          {% endif %}
+           {% if request.path contains '/fr' %}
+                          <span> ⚠️ Pour restaurer un élément supprimé, rendez-vous sur votre compte My Franky. </span>
+                        {% elsif request.path contains '/nl' %}
+                          <span> ⚠️ Ga naar je Mijn Franky account om een verwijderd item te herstellen. </span>
+                        {% else %}
+                          <span> ⚠️ To restore a deleted item, go to your My Franky account. </span>
+                        {% endif %}
         {% endif %}
       </cart-drawer-items>
       <div class="drawer__footer">

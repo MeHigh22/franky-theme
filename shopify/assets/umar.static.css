@@ -123,6 +123,7 @@ main {
   display: flex;
   color: #5ec3b2;
   flex-grow: 1;
+  justify-content: center;
   align-items: center;
 }
 
@@ -130,6 +131,7 @@ main {
   display: flex;
   color: #5ec3b2;
   flex-grow: 1;
+    justify-content: center;
   align-items: center;
 }
 
@@ -144,6 +146,8 @@ main {
   display: flex;
   color: #5ec3b2;
   flex-grow: 1;
+    justify-content: center;
+
   align-items: center;
 }
 
@@ -183,11 +187,6 @@ main {
   }
 }
 
-@media screen and (min-width: 750px) {
-  .banner--large:not(.banner--adapt) {
-    min-height: 85rem !important;
-  }
-}
 
 .section_2-first {
   margin: auto;
@@ -459,7 +458,6 @@ main {
 
 .arrow-upper img {
   position: absolute;
-  top: 71px;
   width: 220px;
   left: calc(10% + -70px);
 }
@@ -567,10 +565,11 @@ main {
   font-weight: 500;
 }
 .section_6-card {
-  display: flex;
-  width: 60%;
-  margin: auto;
-  column-gap: 60px;
+
+      display: flex;
+    width: 60%;
+    margin: 20px auto;
+    column-gap: 60px;
 }
 .section_6-card_image_scnd h2 {
   font-family: "boldenvan_demoregular";
@@ -615,7 +614,7 @@ main {
 /* <!-- /////////////////////////////////pre-footer////////////////////////////////////////////// --> */
 
 .section_6 {
-  padding-top: 20px;
+  margin-top: 0;
 }
 .section_6 > img {
   width: 100%;
@@ -1718,9 +1717,11 @@ main {
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////sustainability//////////////////////////////////////////// */
 
 .wrapperr {
+padding: 15px;
   width: 90%;
-  max-width: 1280px;
-  margin: auto;
+    max-width: 1280px;
+    margin: auto;
+  
 }
 
 .benifetsText {
@@ -3243,4 +3244,8 @@ topCurveImg {
 
 .rte {
   text-align: center;
+}
+
+.nGY2 .nGY2GThumbnailIconsFullThumbnail {
+  display: none !important;
 }

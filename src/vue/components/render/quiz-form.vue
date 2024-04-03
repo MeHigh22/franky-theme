@@ -218,6 +218,7 @@ const [container, slider] = useKeenSlider(
   [MutationPlugin]
 );
 
+
 const dotHelper = computed(() => (slider.value ? [...results.value] : []));
 const toast = useToast();
 
@@ -426,25 +427,27 @@ const backToQuiz = async () => {
 };
 
 const sizeToSellingPlan = {
-  '3Kg': {
-    sellingPlan: 688994320726,
-    id: 47265461764438,
-    quantity: 1,
+  "3Kg": {
+        id: 46534497796438,
+        quantity: 1,
+        sellingPlan: 688850010454,
   },
-  '4.5Kg': {
-    sellingPlan: 688994353494, // Remplacer par ceux de Charles
-    id: 47265465598294,
-    quantity: 1,
+
+  "4.5Kg": {
+        id: 46534503039318,
+        quantity: 1,
+        sellingPlan: 688850075990,
+
   },
-  '6Kg': {
-    sellingPlan: 688994386262,
-    id: 47265466712406,
-    quantity: 1,
+  "6Kg": {
+        id: 46849961296214,
+        quantity: 1,
+        sellingPlan: 688921641302,
   },
-  '15Kg': {
-    sellingPlan: 688994484566,
+  "15Kg": {
     id: 47265471136086,
     quantity: 1,
+    sellingPlan: 688994484566,
   },
 };
 
@@ -515,59 +518,46 @@ const onSubmit = async (val) => {
     const gramsPerDay = dailyAllowance;
     let deliveryFrequency;
 
-    if (coveredPostalCodes.includes(postalCode.toString())) {
-      // Postal code is included in the list
-      deliveryFrequency = t('message.frequency_covered');
-      isPostalCodeCovered.value = true;
-      console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
+    // Adjusted logic to choose the closest package size
+    let closestPackageSize;
+    if (monthlyAllowance <= 3000) {
+      closestPackageSize = 3000;
+    } else if (monthlyAllowance <= 4500) {
+      closestPackageSize = 4500;
+    } else if (monthlyAllowance <= 6000) {
+      closestPackageSize = 6000;
     } else {
-      // Postal code is not included, calculate deliveryFrequency based on the formula
-      deliveryFrequency =
-        Math.ceil(monthlyAllowance / (gramsPerDay * 7)) + t('message.weeks');
-      isPostalCodeCovered.value = false;
-      console.log('isPostalCodeCovered:', isPostalCodeCovered.value);
+      closestPackageSize = 15000;
     }
 
+    // Calculate the number of days the package will last based on daily consumption rate
+    const daysUntilEmpty = closestPackageSize / gramsPerDay;
+
+    // Assign the delivery frequency based on the total days
+    if (daysUntilEmpty <= 30) {
+      deliveryFrequency = Math.ceil(daysUntilEmpty) + ' day';
+    } else if (daysUntilEmpty > 30 && daysUntilEmpty <= 60) {
+      deliveryFrequency = Math.ceil(daysUntilEmpty / 7) + ' weeks';
+    } else {
+      deliveryFrequency = Math.ceil(daysUntilEmpty / 30.5) + ' months';
+    }
+
+    console.log('Monthly Allowance:', monthlyAllowance, 'grams');
+    console.log('Closest Package Size:', closestPackageSize, 'grams');
+    console.log('Delivery Frequency:', deliveryFrequency);
+        
     let currentFormData;
     let currentPlan;
     let currentVariantId;
     let currentQuantity;
-    let maxQuantity = 12800;
 
-    if (coveredPostalCodes.includes(postalCode.toString())) {
-      for (let allowance = 3000; allowance <= 12800; allowance += 100) {
-        let key = (allowance / 1000)?.toFixed(1).replace('.', '_') + 'Kg';
-
-        cartProduct.value = (allowance / 1000)?.toFixed(1) + 'Kg';
-        currentFormData = formDataKibbles[key];
-
-        if (monthlyAllowance > 12800 && currentFormData) {
-          cartProduct.value = '12_8Kg';
-          currentFormData = formDataKibbles['12_8Kg'];
-
-          currentPlan = currentFormData.items[0].selling_plan;
-          currentVariantId = currentFormData.items[0].id;
-          currentQuantity = currentFormData.items[0].quantity;
-          break;
-        } else if (monthlyAllowance <= allowance && currentFormData) {
-          currentPlan = currentFormData.items[0].selling_plan;
-          currentVariantId = currentFormData.items[0].id;
-          currentQuantity = currentFormData.items[0].quantity;
-          break;
-        }
-      }
-    } else {
-      toast.warning('Postal Code not covered', {
-        timeout: 3048,
-        hideProgressBar: false,
-      });
-
-      postal_code_not_found.value = t('message.postal_code_not_found');
 
       for (const size in sizeToSellingPlan) {
         const sizeValue = parseFloat(size.replace('_', '.').replace('Kg', ''));
 
         let key = size;
+        
+
         currentFormData = sizeToSellingPlan[key];
 
         if (monthlyAllowance < 3000) {
@@ -596,8 +586,8 @@ const onSubmit = async (val) => {
           cartProduct.value = '15Kg';
         }
       }
-    }
 
+      
     let sampleSizeLink;
     let closestSize;
     let adjustedPrice;

@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "94db2e55-2e93-46cc-83a9-cdc4de69e8f4": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>We care about your dog<\/p>",
+            "heading_size": "h0"
+          }
+        },
+        "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We care about our dogs' well-being. That's why we continually invest in research, development and product improvement. Our formula has been specially created to offer your dog optimal nutritional balance while minimizing our environmental footprint. Try us now ! Start a custom subscription or try out our free sample first, you'll pay only a small delivery charge, and we'll take care of the rest.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-heading-1",
+        "template--20331792433494__94db2e55-2e93-46cc-83a9-cdc4de69e8f4-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 20
+      }
+    },
+    "5dec33e0-fd79-41e0-8bb2-22b65e60602a": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--20331792433494__5dec33e0-fd79-41e0-8bb2-22b65e60602a-column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img1.png",
+            "title": "Insect-based adult dog food",
+            "text": "<p>Everything your dog needs, monthly delivered<\/p>",
+            "liquid": "<div class=\"quiz-price\"> €20,97 <\/div>\n\n<div class=\"btn-flexs\">\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"outline-btns hidden\"> More Info <\/a>\n  <\/div>\n\n  <div>\n    <a href=\"\/pages\/quiz-single-product-2\" class=\"solid-btn\">More info<\/a>\n  <\/div>\n<\/div>",
+            "price": "€20,97",
+            "info1": "",
+            "info2": "More info",
+            "product_link": "quiz-single-product-2",
+            "link_label": "",
+            "link": "#"
+          }
+        },
+        "14829770-8915-42ba-916c-ff20811e4c66": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fffgg.png",
+            "title": "Free test package",
+            "text": "<p>Pay delivery only, we take care of the rest<\/p>",
+            "liquid": "<div class=\"quiz-price\"> €0,00 <\/div>\n\n<div class=\"btn-flexs\">\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"outline-btns hidden\"> More Info <\/a>\n  <\/div>\n\n  <div>\n    <a href=\"\/pages\/quiz-single-product-1\" class=\"solid-btn\">More info<\/a>\n  <\/div>\n<\/div>",
+            "price": "€0,00",
+            "info1": "",
+            "info2": "More info",
+            "product_link": "quiz-single-product-1",
+            "link_label": "",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "template--20331792433494__5dec33e0-fd79-41e0-8bb2-22b65e60602a-column-1",
+        "14829770-8915-42ba-916c-ff20811e4c66"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "94db2e55-2e93-46cc-83a9-cdc4de69e8f4",
+    "5dec33e0-fd79-41e0-8bb2-22b65e60602a"
+  ]
+}

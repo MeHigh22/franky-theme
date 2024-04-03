@@ -1,0 +1,135 @@
+<link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"
+  defer
+></script>
+
+<div class="page-width">
+  <div class="quiz-grid-two">
+    <div>
+      <div
+        id="ngy2p"
+        data-nanogallery2='{
+        "thumbnailWidth": "330 LA500 XL400",
+        "thumbnailHeight": "250 LA400 XL400",
+          "thumbnailLabel": {
+            "position": "overImageOnBottom",
+            "display": false
+          },
+        "galleryMaxRows": 2,
+         "galleryDisplayMode": "rows",
+        "galleryPaginationMode": "numbers",
+        "thumbnailAlignment": "center",
+        "thumbnailOpenImage": true
+            }'
+      >
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'gallery' -%}
+              <a
+                href="{{ block.settings.image | img_url: 'master' }}"
+                data-ngthumb="{{ block.settings.image | img_url: 'master' }}"
+                data-ngdesc=""
+              ></a>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="quiz-col-two">
+      <h1>{{ section.settings.title }}</h1>
+      {{ section.settings.description }}
+
+      <h3>{{ section.settings.grid_title }}</h3>
+
+      {%- for block in section.blocks -%}
+        <div class="grid-boxes">
+          {%- case block.type -%}
+            {%- when 'item' -%}
+              <div>
+                {%- assign image = block.settings.image -%}
+                {{ image | image_url: width: image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+              </div>
+
+              <div>
+                {{ block.settings.text }}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+
+<a class="p_btn h_btn quizOpen"> {{ section.settings.quiz_text }}</a>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "quiz single page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "description"
+    },
+    {
+      "type": "text",
+      "id": "grid_title",
+      "label": "grid title"
+    },
+      {
+      "type": "text",
+      "id": "quiz_text",
+      "label": "Add TO Cart Text",
+         "default": "Try Now"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "text"
+        }
+      ]
+    },
+        {
+      "name": "gallery",
+      "type": "gallery",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "quiz single page"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

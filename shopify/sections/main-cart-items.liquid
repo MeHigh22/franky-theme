@@ -30,7 +30,33 @@
 
   <div class="cart__warnings">
     <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-    <a href="/pages/our-product#quizz" class="button"> Take the quizz </a>
+
+
+      {% if request.path contains '/fr' %}
+        <a href="https://www.forfranky.be/fr/pages/quiz-collection" class="button p_btn_3"> Faire le quiz </a> <br/> <br/>
+      <div class="section_3-button">
+        <button>    <a href="https://www.forfranky.be/fr/account"> Mon compte Franky </a>
+        </button>
+      </div>
+      {% elsif request.path contains '/nl' %}
+        <a href="https://www.forfranky.be/nl/pages/quiz-collection" class="button p_btn_3"> Doe de quiz </a> <br/> <br/>
+
+          <div class="section_3-button">
+        <button>            <a href="https://www.forfranky.be/nl/account" class="section_3-button"> Mijn Franky account </a>                  
+
+        </button>
+      </div>
+
+    
+      {% else %}
+        <a href="https://www.forfranky.be/pages/quiz-collection" class="button p_btn_3"> Take the quiz </a> <br/> <br/>
+              <div class="section_3-button">
+        <button>                  
+          <a href="https://www.forfranky.be/account" class="section_3-button"> My Franky account </a>
+                
+        </button>
+      </div>
+      {% endif %}
 
     {%- if shop.customer_accounts_enabled and customer == null -%}
       <h2 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h2>
@@ -53,7 +79,15 @@
                 <th class="caption-with-letter-spacing" colspan="2" scope="col">
                   {{ 'sections.cart.headings.product' | t }}
                   <br>
-                  <span> ⚠️ To restore a deleted item, you will need to take the quiz again </span>
+
+                        {% if request.path contains '/fr' %}
+                          <span> ⚠️ Pour restaurer un élément supprimé, rendez-vous sur votre compte My Franky. </span>
+                        {% elsif request.path contains '/nl' %}
+                          <span> ⚠️ Ga naar je Mijn Franky account om een verwijderd item te herstellen. </span>
+                        {% else %}
+                          <span> ⚠️ To restore a deleted item, go to your My Franky account. </span>
+                        {% endif %}
+                  
                 </th>
                 <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
                   {{ 'sections.cart.headings.total' | t }}

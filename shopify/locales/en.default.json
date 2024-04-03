@@ -20,7 +20,7 @@
   "result_already_cart": "Already In Cart",
   "result_sample_to_cart": "Add {msg} kg Sample to Cart",
   "result_calculated_needs": "We Calculated {dogName} daily needs:",
-  "result_message_cover" : "We do not fully cover your area just yet, Kibbles boxes are therefore larger and delivery frequency longer.",
+  "result_message_cover": "We do not fully cover your area just yet, Kibbles boxes are therefore larger and delivery frequency longer.",
   "day": "day",
   "back_to_quiz": "&#8592; Back to quiz",
   "quiz_detail_title": "Details for {msg}",
@@ -30,7 +30,7 @@
   "result_quantity": "Quantity:",
   "result_kibbles": "Kibbles",
   "result_ideal_weight": "Ideal body weight:",
-  "result_price_per_month": "Price/month for a full diet:",
+  "result_price_per_month": "Price\/month for a full diet:",
   "result_subs_to_cart": "ADD SUBSCRIPTION TO CART",
   "result_cancel": "Cancel whenever you want",
   "customer_created": "Customer Created Successfully",
@@ -39,10 +39,10 @@
   "add_to_cart": "{msg} Added To Cart",
   "nothing_added_cart": "Nothing Added To Cart",
   "dog_image": "Dog Image",
-  "low_activity": "Low activity (< 1h/day)",
-  "high_activity": "High activity (3-6h/day - Working dogs, sheep dogs)",
-  "moderate_activity_high": "Moderate activity (1-3h/day - High impact)",
-  "moderate_activity": "Moderate activity (1-3h/day - Low impact)",
+  "low_activity": "Low activity (< 1h\/day)",
+  "high_activity": "High activity (3-6h\/day - Working dogs, sheep dogs)",
+  "moderate_activity_high": "Moderate activity (1-3h\/day - High impact)",
+  "moderate_activity": "Moderate activity (1-3h\/day - Low impact)",
   "spayed": "Spayed",
   "castrated": "Castrated",
   "not_sterilized": "Not sterilized or castrated",
@@ -56,6 +56,11 @@
   "remove_dog": "Remove Dog",
   "nothing_found": "Nothing Found",
   "checkout_btn": "Proceed To Checkout",
+  "very_thin_des": "Ribs, lumbar vertebrae, pelvic bones and all bony prominences evident from a distance. No discernible body fat. Obvious loss of muscle mass",
+  "slightly_underweight_des": "Ribs easily palpated and may be visible with no palpable fat. Tops of lumbar vertebrae visible. Pelvic bones becoming prominent. Obvious waist and abdominal tuck.",
+  "ideal_des": "Ribs palpable without excess fat covering. Waist observed behind ribs when viewed from above. Abdomen tucked up when viewed from side.",
+  "overweight_des": "Ribs palpable with difficulty; heavy fat cover. Noticeable fat deposits over lumbar area and base of tail. Waist absent or barely visible. Abdominal tuck may be present.",
+  "obese_des": "Massive fat deposits over thorax, spine and base of tail. Waist and abdominal tuck absent. Fat deposits on neck and limbs. Obvious abdominal distention.",
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",
@@ -64,7 +69,7 @@
       "login_form_password_placeholder": "Your password",
       "login_form_error": "Wrong password!",
       "login_form_submit": "Enter",
-      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link underlined-link\">Log in here</a>",
+      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"link underlined-link\">Log in here<\/a>",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
     "social": {
@@ -194,14 +199,14 @@
         "minimum_of": "Minimum of {{ quantity }}",
         "maximum_of": "Maximum of {{ quantity }}",
         "multiples_of": "Increments of {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> in cart"
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> in cart"
       },
       "pickup_availability": {
         "view_store_info": "View store information",
         "check_other_stores": "Check availability at other stores",
         "pick_up_available": "Pickup available",
-        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}<\/span>",
         "unavailable": "Couldn't load pickup availability",
         "refresh": "Refresh"
       },
@@ -222,7 +227,7 @@
       "xr_button": "View in your space",
       "xr_button_label": "View in your space, loads item in augmented reality window",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout."
     },
     "modal": {
       "label": "Media gallery"
@@ -328,9 +333,9 @@
       "empty": "Your cart is empty",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
-      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
       "headings": {
         "product": "Product",
@@ -342,7 +347,7 @@
       "update": "Update",
       "login": {
         "title": "Have an account?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in<\/a> to check out faster."
       }
     },
     "footer": {
@@ -363,7 +368,7 @@
     "collection_template": {
       "empty": "No products found",
       "title": "Collection",
-      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">remove all</a>"
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">remove all<\/a>"
     },
     "video": {
       "load_video": "Load video: {{ description }}"
@@ -382,10 +387,10 @@
     }
   },
   "localization": {
-    "country_label": "Country/region",
+    "country_label": "Country\/region",
     "language_label": "Language",
     "update_language": "Update language",
-    "update_country": "Update country/region"
+    "update_country": "Update country\/region"
   },
   "customer": {
     "account": {
@@ -414,9 +419,9 @@
       "address1": "Address 1",
       "address2": "Address 2",
       "city": "City",
-      "country": "Country/region",
+      "country": "Country\/region",
       "province": "Province",
-      "zip": "Postal/ZIP code",
+      "zip": "Postal\/ZIP code",
       "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add address",

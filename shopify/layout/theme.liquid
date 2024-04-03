@@ -387,6 +387,17 @@
         $('.quizOpen').click(function () {
           $('div#quiz').fadeIn();
         });
+
+        if(location.pathname.includes('/cart')) {
+          document.querySelectorAll('a#cart-icon-bubble').forEach((item) => {
+  item.addEventListener('click', () => {
+    window.location.reload();
+  });
+});
+        }
+
+
+        
       });
     </script>
   </body>

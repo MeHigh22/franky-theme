@@ -119,9 +119,20 @@
                   {% if block.settings.button_link_1 == blank %}
                     role="link" aria-disabled="true"
                   {% else %}
-                    href="#"
+
+                  
+                    {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+
+                  
                   {% endif %}
-                  class="p_btn quizOpen"
+                  class="p_btn"
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>

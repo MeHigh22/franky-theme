@@ -15,10 +15,19 @@
         </div>
         <div class="prefooter_thrd pure-u-1 pure-u-md-8-24">
           <div>
-            <a class="p_btn quizOpen">{{ section.settings.text_2 }}</a>
+            <a class="p_btn" 
+                                  {% if request.path contains '/fr' %}
+                      href="https://www.forfranky.be/fr/pages/quiz-collection"
+                    {% elsif request.path contains '/nl' %}
+                      href="https://www.forfranky.be/nl/pages/quiz-collection"
+                    {% else %}
+                      href="https://www.forfranky.be/pages/quiz-collection"
+                    {% endif %}
+
+              >{{ section.settings.text_2 }}</a>
           </div>
           <div class="preFooterscnd_btn">
-            <a href="/apps/subscriptions#/subscriptions/list">{{ section.settings.text_3 }}</a>
+            <a href="/account">{{ section.settings.text_3 }}</a>
           </div>
         </div>
       </div>

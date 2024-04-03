@@ -104,6 +104,44 @@
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
+                {%- if block.settings.liquid != blank -%}
+                  <div>
+                    
+                    <div class="quiz-price"> {{ block.settings.price }} </div>
+
+                    <div class="btn-flexs">
+                      <div>
+                        
+                        <a 
+
+                    {% if request.path contains '/fr' %}
+                      href="/fr/pages/{{ block.settings.product_link }}"
+                    {% elsif request.path contains '/nl' %}
+                      href="/nl/pages/{{ block.settings.product_link }}"
+                    {% else %}
+                      href="/pages/{{ block.settings.product_link }}"
+                    {% endif %}
+                                                    
+                          
+                          class="outline-btns hidden"> {{ block.settings.info1 }} </a>
+                      </div>
+                    
+                      <div>
+                        <a 
+                       {% if request.path contains '/fr' %}
+                      href="/fr/pages/{{ block.settings.product_link }}"
+                    {% elsif request.path contains '/nl' %}
+                      href="/nl/pages/{{ block.settings.product_link }}"
+                    {% else %}
+                      href="/pages/{{ block.settings.product_link }}"
+                    {% endif %}
+                          class="solid-btn">{{ block.settings.info2 }}</a>
+                      </div>
+                    </div>
+                  
+                  </div>
+                {%- endif -%}
+
                 {%- if block.settings.link_label != blank -%}
                   <a
                     class="link animate-arrow"
@@ -401,6 +439,31 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+                {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "Liquid Text"
+        },
+         {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+         {
+          "type": "text",
+          "id": "info1",
+          "label": "Info btn 1"
+        },
+         {
+          "type": "text",
+          "id": "info2",
+          "label": "Info btn 2"
+        },
+        {
+          "type": "text",
+          "id": "product_link",
+          "label": "product_link"
         },
         {
           "type": "text",
