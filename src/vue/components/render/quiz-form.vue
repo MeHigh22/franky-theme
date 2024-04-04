@@ -529,17 +529,16 @@ const onSubmit = async (val) => {
     } else {
       closestPackageSize = 15000;
     }
-
     // Calculate the number of days the package will last based on daily consumption rate
     const daysUntilEmpty = closestPackageSize / gramsPerDay;
 
     // Assign the delivery frequency based on the total days
     if (daysUntilEmpty <= 30) {
-      deliveryFrequency = Math.ceil(daysUntilEmpty) + ' day';
+      deliveryFrequency = Math.round(daysUntilEmpty) + " / " + ' days';
     } else if (daysUntilEmpty > 30 && daysUntilEmpty <= 60) {
-      deliveryFrequency = Math.ceil(daysUntilEmpty / 7) + ' weeks';
+      deliveryFrequency = Math.round(daysUntilEmpty / 7) + ' weeks' + " / " + Math.round(daysUntilEmpty) + " days";
     } else {
-      deliveryFrequency = Math.ceil(daysUntilEmpty / 30.5) + ' months';
+      deliveryFrequency = Math.round(daysUntilEmpty / 30.5) + ' months' + " / " + Math.round(daysUntilEmpty) + " days";
     }
 
     console.log('Monthly Allowance:', monthlyAllowance, 'grams');
