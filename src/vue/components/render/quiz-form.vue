@@ -89,7 +89,7 @@
               :value="value['multi-step_2']"
             />
 
-            <div class="button-flex" v-if="store.state.step.currentStep == 2">
+            <div class="button-flex" v-if="store.state.step.currentStep == 1">
               <button type="button" @click="addDog()" class="add-dog back btn">
                 {{ $t('message.add_dog') }}
               </button>
